@@ -1,4 +1,16 @@
-var container = document.getElementById('anim_container');
+  <script src="js/data.js"></script>
+  <script>
+   var container = document.getElementById('anim_container');
+    // Set up our animation 
+    var animData = {
+        container: container,
+        renderer: 'svg',
+        autoplay: true,
+        loop: true,
+        animationData : data
+    };
+    var anim = bodymovin.loadAnimation(animData);
+  </script>var container = document.getElementById('anim_container');
 	  container: element, // the dom element that will contain the animation
   renderer: 'svg',
   loop: true,
