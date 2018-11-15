@@ -1,16 +1,15 @@
 <!DOCTYPE HTML>
 	<html>
-		<head>
-			<meta charset="UTF-8">
+		<meta charset="UTF-8">
+			<head>
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 			<title>
 				Christopher Acciai
 			</title>
-			<link rel="stylesheet" type="text/css" href="/styles/mouseOver.css">
-			<link rel="stylesheet" type="text/css" href="/styles/styles.css">
+			
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-		</head>
-		<body>
+			</head>
+			<body>
  			<div class = "container-fluid intro-top">
  				<h1 class = "text-center ">
 					Hi, I'm Christopher Acciai.
@@ -18,24 +17,27 @@
 				<p class = "text-center">
 					Thanks for stopping by! This website is under construction but for now check out what I've been jammin' to.
 				</p>
+				<div id="lottie"></div>
 			</div>
+			<script src="lottie.js"></script>
+	
 			<div id="lottie"></div>
+
 			<script>
     			var params = {
-        			container: document.getElementById('lottie'),
-        			renderer: 'svg',
-        			loop: true,
-        			autoplay: true,
-					path: '/scripts/frankMouseover.json'
-    			};
+        		container: document.getElementById('lottie'),
+        		renderer: 'svg',
+        		loop: true,
+        		autoplay: false,
+        		path: 'frankMouseover.json'
+    		};
 
-    			var anim;
-  				anim = bodymovin.loadAnimation(params);
+    		var anim;
+
+    		anim = lottie.loadAnimation(params);
 			</script>
-			
-			<script src="/scripts/bodymovin.js"></script>
 			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-		</body>
+			</body>
 	</html>
