@@ -41,17 +41,16 @@
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
+  text-align: left;
 }
 .centeredRight {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
 }
 
-.bio {
-	margin-right: 50px;
-    margin-left: 50px;
+.bioText {
+  margin-right: 40px;
+  margin-left: 55px;
 }
