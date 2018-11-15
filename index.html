@@ -24,8 +24,11 @@
 			<div id="lottie"></div>
 
 			<script>
+				
+				animContainer = document.getElementById('lottie')
+				
     			var params = {
-        		container: document.getElementById('lottie'),
+        		container: animContainer,
         		renderer: 'svg',
         		loop: false,
         		autoplay: false,
@@ -35,12 +38,12 @@
     		var anim;
 
     		anim = lottie.loadAnimation(params);
-				
-			anim.addEventListener("mouseover", playAnimation);
-				
-			function playAnimation() {
-				lottie.play();
+			animContainer.addEventListener("mouseover", forwardAnimation);
+			
+			function forwardAnimation() {
+				anim.play();
 			}
+			
 			</script>
 
 			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
