@@ -11,18 +11,21 @@
 			<link rel="stylesheet" href="styles/style.css">
 			</head>
 			<body>
- 			<div class = "container-fluid intro-top">
- 				<h1 class = "text-center ">
-					Hi, I'm Christopher Acciai.
-				</h1>
-				<p class = "text-center">
-					Thanks for stopping by! This website is under construction but for now check out what I've been jammin' to.
-				</p>
-				<div id="lottie"></div>
+			<div class="splitLeft left">
+  				<div class="centeredLeft">
+					<img src="rotunda.png" style="width:500px;height:400px;">
+    				<h2>Hi, I'm Christopher Acciai.</h2>
+    				<p class="bio">Thanks for stopping by! I'm a third year @ U.Va studying computer science and psych. I'm passionate about all things design and technology. This website is under construction but for now check out what I've been <a href="https://www.youtube.com/watch?v=gHiqPG0526U">jammin'</a> to.</p>
+  				</div>
 			</div>
+
+			<div class="splitRight right">
+				<div class="centeredRight">
+					<img src="dashboard.png" style="width:500px;height:300px;">
+				</div>
+			</div>			
+			
 			<script src="lottie.js" type="text/javascript"></script>
-	
-			<div id="lottie"></div>
 
 			<script>
 				
@@ -50,7 +53,6 @@
 			}
 			function reverseAnimation() {
 				anim.setDirection(-1);
-				anim.goToAndStop(lastFrame);
 				anim.play();
 			}
 			

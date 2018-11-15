@@ -1,4 +1,57 @@
-.intro-top {
-	margin-top: 200px;
+.jamminSize {
+	height: 120px;
+	width: 120px;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	z-index: 1;
 }
 
+.splitRight {
+  height: 100%;
+  width: 60%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+.splitLeft {
+  height: 100%;
+  width: 40%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: white;
+}
+
+.right {
+  right:0;
+  background-color: #F3B84A;
+}
+
+.centeredLeft {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.centeredRight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.bio {
+	margin-right: 50px;
+    margin-left: 50px;
+}
