@@ -8,6 +8,7 @@
 			</title>
 			
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+			<link rel="stylesheet" href="styles/style.css">
 			</head>
 			<body>
  			<div class = "container-fluid intro-top">
@@ -41,8 +42,15 @@
 
     		anim = lottie.loadAnimation(params);
 			animContainer.addEventListener("mouseover", forwardAnimation);
+			animContainer.addEventListener("mouseout", reverseAnimation);
 			
 			function forwardAnimation() {
+				anim.setDirection(1);
+				anim.play();
+			}
+			function reverseAnimation() {
+				anim.setDirection(-1);
+				anim.goToAndStop(lastFrame);
 				anim.play();
 			}
 			
