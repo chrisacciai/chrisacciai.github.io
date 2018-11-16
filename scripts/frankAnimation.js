@@ -1,10 +1,32 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
-</head>
+			<script src="lottie.js" type="text/javascript"></script>
 
-<body>
-</body>
-</html>
+			<script>
+				
+				animContainer = document.getElementById('lottie')
+				
+    			var params = {
+        		container: animContainer,
+        		renderer: 'svg',
+        		loop: false,
+				autoplay: false,
+        		autoplay: false,
+				autoloadSegments: false,
+        		path: 'frankMouseover.json'
+    		};
+
+    		var anim;
+
+    		anim = lottie.loadAnimation(params);
+			animContainer.addEventListener("mouseover", forwardAnimation);
+			animContainer.addEventListener("mouseout", reverseAnimation);
+			
+			function forwardAnimation() {
+				anim.setDirection(1);
+				anim.play();
+			}
+			function reverseAnimation() {
+				anim.setDirection(-1);
+				anim.play();
+			}
+			
+			</script>

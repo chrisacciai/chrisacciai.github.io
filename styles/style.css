@@ -53,4 +53,13 @@
 .bioText {
   margin-right: 40px;
   margin-left: 55px;
+  color: darkgrey;
+}
+.bioTextTitle {
+  margin-right: 40px;
+  margin-left: 55px;
+  color: black;
+}
+.bioTextBold {
+  color: black;
 }
