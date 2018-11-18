@@ -1,0 +1,47 @@
+{
+  "name": "sequencejs",
+  "description": "The responsive CSS animation framework for creating unique sliders, presentations, banners, and other step-based applications.",
+  "version": "2.1.0",
+  "main": "scripts/sequence.min.js",
+  "license": "MIT",
+  "homepage": "http://www.sequencejs.com/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/IanLunn/Sequence.git"
+  },
+  "bugs": "https://github.com/IanLunn/Sequence/issues",
+  "authors": [
+    "Ian Lunn <hello@ianlunn.co.uk>"
+  ],
+  "keywords": [
+    "sequence",
+    "sequence.js",
+    "sequencejs",
+    "slider",
+    "carousel",
+    "animation",
+    "animation framework",
+    "css animation"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "hammerjs": "2.0.4",
+    "imagesloaded": "3.1.5"
+  },
+  "_release": "2.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.1.0",
+    "commit": "9031cae6bfa59a2b1fa48d2b7995b039dc139dfd"
+  },
+  "_source": "https://github.com/IanLunn/Sequence.git",
+  "_target": "^2.1.0",
+  "_originalSource": "sequencejs",
+  "_direct": true
+}
