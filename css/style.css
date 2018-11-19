@@ -1,0 +1,66 @@
+.jamminSize {
+	height: 120px;
+	width: 120px;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	z-index: 1;
+}
+
+.splitRight {
+  height: 100%;
+  width: 60%;
+  position: fixed;
+  top: 0;
+  overflow-x: hidden;
+}
+.splitLeft {
+  height: 100%;
+  width: 40%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: white;
+}
+
+.right {
+  right:0;
+  background-color: #F3B84A;
+}
+
+.centeredLeft {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+}
+
+.bioText {
+  margin-right: 40px;
+  margin-left: 55px;
+  color: darkgrey;
+  font-size: 16px;
+  font-family: "TitilliumWeb Regular";
+}
+.bioTextTitle {
+  margin-right: 40px;
+  margin-left: 55px;
+  color: black;
+  font-size: 30px;
+  font-family: "TitilliumWeb Regular";
+}
+.bioTextBold {
+  color: black;
+}
+.bioVectors {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
