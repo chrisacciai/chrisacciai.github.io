@@ -37,7 +37,7 @@ html,
   font-family: sans-serif;
   color: white;
   text-align: center;
-  background-color: #F3B84A;
+  background-color: #A8D0E6;
   -webkit-transition-duration: .5s;
   transition-duration: .5s;
   -webkit-transition-property: background-color;
@@ -45,7 +45,7 @@ html,
 }
 
 .seq .seq-preloader {
-  background-color: #F3B84A;
+  background-color: #A8D0E6;
   text-align: left;
 }
 

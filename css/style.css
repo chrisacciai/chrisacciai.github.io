@@ -47,17 +47,18 @@
   margin-left: 55px;
   color: darkgrey;
   font-size: 16px;
-  font-family: "TitilliumWeb Regular";
+  font: "BebasNeue Regular";
 }
 .bioTextTitle {
   margin-right: 40px;
   margin-left: 55px;
   color: black;
   font-size: 30px;
-  font-family: "TitilliumWeb Regular";
+  font: 'BebasNeue Regular';
 }
 .bioTextBold {
   color: black;
+  font: "BebasNeue Regular";
 }
 .bioVectors {
   margin-top: 25px;
