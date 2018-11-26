@@ -136,6 +136,13 @@ html,
   transition-property: transform, opacity;
 }
 
+.grow {
+}
+
+.grow:hover {
+  transform: scale(1.2); 
+}
+
 .seq .seq-in .seq-title {
   opacity: 1;
   -webkit-transform: translateX(0) translateZ(0);
