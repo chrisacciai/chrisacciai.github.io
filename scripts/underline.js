@@ -6,7 +6,7 @@ var params2 = {
 	loop: false,
 	autoplay: false,
 	autoloadSegments: true,
-	path: 'underline2.json'
+	path: 'underline.json'
 };
  
 var anim2;

@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'AvenirNext';
-  src:  url('AvenirNextLTPro-Regular.woff') format('woff');
+  src:  url('../AvenirNextLTPro-Regular.woff') format('woff');
 }
 
 .intro {
