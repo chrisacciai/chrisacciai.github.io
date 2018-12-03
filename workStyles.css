@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'AvenirNext';
+  src:  url('AvenirNextLTPro-Regular.woff') format('woff');
+}
+
+.intro {
+	margin-left: 10%;
+	margin-top: 15%;
+}
+
+.rotunda {
+	margin-right: 10%;
+	margin-top: 5%;
+}
+
+.laptop {
+	margin-right: 10%;
+	margin-top: 10%;
+	margin-bottom: 10%;
+	margin-left: 10%;
+}
+
+.jumbotron-fluid {
+	background-color: #FAFAFA;
+}
+
+.box1 {
+	background-color: #4677EB;
+	margin-left: 5px;
+	margin-right: 2.5px;
+	margin-bottom: 2.5px;
+}
+
+.imageBox {
+	width: 350px;
+	margin: auto;
+	padding-top: 15%;
+	padding-bottom: 15%;
+}
+
+.box2 {
+	background-color: #2AB024;
+	margin-right: 5px;
+	margin-left: 2.5px;
+	margin-bottom: 2.5px;
+}
+
+.box3 {
+	background-color: #EB4674;
+	margin-left: 5px;
+	margin-right: 2.5px;
+	margin-top: 2.5px;
+}
+
+.box4 {
+	background-color: #B4B7DC;
+	margin-right: 5px;
+	margin-left: 2.5px;
+	margin-top: 2.5px;
+}
