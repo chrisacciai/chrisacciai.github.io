@@ -69,48 +69,30 @@
 	  </div>
 	<script>	  
 	var text = document.getElementById('about')
+	
+	animContainer2 = document.getElementById('lottie')
+
+	var params2 = {
+		container: animContainer2,
+		renderer: 'svg',
+		loop: false,
+		autoplay: false,
+		autoloadSegments: true,
+		path: 'underline.json'
+	};
+
+	var anim2;
+	anim2 = lottie.loadAnimation(params2);
 		
 	text.addEventListener("mouseover", forwardAnimation);
 	text.addEventListener("mouseout", reverseAnimation);
 		
 	function forwardAnimation() {
 		
-	animContainer2 = document.getElementById('lottie')
-
-	var params2 = {
-		container: animContainer2,
-		renderer: 'svg',
-		loop: false,
-		autoplay: false,
-		autoloadSegments: true,
-		path: 'underline.json'
-	};
-
-	var anim2;
-	anim2 = lottie.loadAnimation(params2);
-		
 		anim2.setDirection(1);
 		anim2.play();
 	}
 	function reverseAnimation() {
-	animContainer2 = document.getElementById('lottie')
-		
-	var text = document.getElementById('about')
-
-	var params2 = {
-		container: animContainer2,
-		renderer: 'svg',
-		loop: false,
-		autoplay: false,
-		autoloadSegments: true,
-		path: 'underline.json'
-	};
-
-	var anim2;
-	anim2 = lottie.loadAnimation(params2);
-
-	text.addEventListener("mouseover", forwardAnimation);
-	text.addEventListener("mouseout", reverseAnimation);
 		
 		anim2.setDirection(-1);
 		anim2.play();
