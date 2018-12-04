@@ -11,15 +11,20 @@ var params = {
  
 var anim;
 anim = lottie.loadAnimation(params);
-				
-animContainer.addEventListener("mouseover", forwardAnimation);
-animContainer.addEventListener("mouseout", reverseAnimation);
-			
-function forwardAnimation() {
-	anim.setDirection(1);
-	anim.play();
-}
-function reverseAnimation() {
-	anim.setDirection(-1);
-	anim.play();
-}
+
+anim.addEventListener('DOMLoaded', function(e) {
+
+  var elem2 = document.getElementById('work');
+
+  elem2.addEventListener('mouseover', forwardAnimation);
+  elem2.addEventListener('mouseout', reverseAnimation);
+
+	function forwardAnimation() {
+		anim.setDirection(1);
+		anim.play();
+	}
+	function reverseAnimation() {
+		anim.setDirection(-1);
+		anim.play();
+	}
+});
