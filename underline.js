@@ -16,11 +16,15 @@ anim2.addEventListener('DOMLoaded', function(e) {
 
   var elem = document.getElementById('about');
 
-  elem.addEventListener('mouseover', mouseElem);
+  elem.addEventListener('mouseover', forwardAnimation);
+  elem.addEventListener('mouseout', reverseAnimation);
 
-  function mouseElem() {
-	anim2.setDirection(1);
-	anim2.play();
-  }
-
+	function forwardAnimation() {
+		anim2.setDirection(1);
+		anim2.play();
+	}
+	function reverseAnimation() {
+		anim2.setDirection(-1);
+		anim2.play();
+	}
 });
