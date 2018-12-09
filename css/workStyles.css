@@ -3,6 +3,12 @@
   src:  url('../AvenirNextLTPro-Regular.woff') format('woff');
 }
 
+@media (max-width: 800px) {
+    #name {
+        display: none;
+    }
+}
+
 .intro {
 	margin-left: 12%;
 	margin-top: 9%;
@@ -10,7 +16,7 @@
 }
 
 .rotunda {
-	margin-right: 8%;
+	margin-right: 9%;
 	margin-top: 3%;
 }
 
@@ -26,38 +32,67 @@
 }
 
 .box1 {
-	background-color: #4677EB;
-	margin-left: 5px;
-	margin-right: 2.5px;
-	margin-bottom: 2.5px;
+	background-color: #5592FF;
+	opacity: .4;
+	transition: opacity .4s ease-out;
+    -moz-transition: opacity .4s ease-out;
+    -webkit-transition: opacity .4s ease-out;
+    -o-transition: opacity .4s ease-out;
+}
+.box1:hover {
+	opacity: 1;
 }
 
 .imageBox {
-	width: 350px;
+	width: 270px;
 	margin: auto;
-	padding-top: 15%;
-	padding-bottom: 15%;
+	padding-top: 20%;
+	padding-bottom: 20%;
+}
+
+.boxText {
+	position: absolute;
+	left: 15px;
+	bottom: 10px;
+	color: white;
+	font-family: AvenirNext;
+	font-size: 27px
 }
 
 .box2 {
-	background-color: #2AB024;
-	margin-right: 5px;
-	margin-left: 2.5px;
-	margin-bottom: 2.5px;
+	background-color: #B6A8B4;
+	opacity: .4;
+	transition: opacity .4s ease-out;
+    -moz-transition: opacity .4s ease-out;
+    -webkit-transition: opacity .4s ease-out;
+    -o-transition: opacity .4s ease-out;
+}
+.box2:hover {
+	opacity: 1;
 }
 
 .box3 {
-	background-color: #EB4674;
-	margin-left: 5px;
-	margin-right: 2.5px;
-	margin-top: 2.5px;
+	background-color: #AB73A7;
+	opacity: .4;
+	transition: opacity .4s ease-out;
+    -moz-transition: opacity .4s ease-out;
+    -webkit-transition: opacity .4s ease-out;
+    -o-transition: opacity .4s ease-out;
+}
+.box3:hover {
+	opacity: 1;
 }
 
 .box4 {
-	background-color: #B4B7DC;
-	margin-right: 5px;
-	margin-left: 2.5px;
-	margin-top: 2.5px;
+	background-color: #5D3667;
+	opacity: .4;
+	transition: opacity .4s ease-out;
+    -moz-transition: opacity .4s ease-out;
+    -webkit-transition: opacity .4s ease-out;
+    -o-transition: opacity .4s ease-out;
+}
+.box4:hover {
+	opacity: 1;
 }
 
 .contact {
