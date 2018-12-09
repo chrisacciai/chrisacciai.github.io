@@ -59,3 +59,10 @@
 	margin-left: 2.5px;
 	margin-top: 2.5px;
 }
+
+.contact {
+	background-color: black;
+	position: absolute;
+	height: 100px;
+	bottom: 0px;
+}
