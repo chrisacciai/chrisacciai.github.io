@@ -9,6 +9,16 @@
     }
 }
 
+@media (max-width: 900px) {
+    .imageBox3 {
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 40%;
+	padding-bottom: 40%;
+    }
+}
+
 .intro {
 	margin-left: 10%;
 	margin-top: 3%;
@@ -23,7 +33,7 @@
 
 .rotunda {
 	margin-top: 0%;
-	width: 420px;
+	width: 430px;
 	min-width: 300px;
 	margin-left: 0px;
 }
@@ -80,7 +90,7 @@
 }
 
 #work2 {
-	opacity: .4;
+	opacity: .75;
 	transition: opacity .4s ease-out;
     -moz-transition: opacity .4s ease-out;
     -webkit-transition: opacity .4s ease-out;
@@ -154,26 +164,24 @@
 	margin-right: auto;
 	padding-top: 10%;
 	padding-bottom: 10%;
-	margin-bottom: 0px;
-	margin-top: 0px;
 }
 
 .boxText {
 	position: absolute;
 	left: 25px;
-	bottom: 40px;
+	bottom: 15px;
 	color: white;
 	font-family: AvenirNext;
-	font-size: 27px
+	font-size: 25px
 }
 
 .boxText2 {
 	position: absolute;
 	left: 25px;
-	bottom: 15px;
+	bottom: 59px;
 	color: white;
 	font-family: AvenirNext;
-	font-size: 19px
+	font-size: 15px
 }
 
 .box2 {
