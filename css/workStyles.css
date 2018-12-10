@@ -25,8 +25,42 @@
 	margin-right: 5%;
 }
 
-.intro2 {
+.intro5 {
 	margin-left: 10%;
+	margin-top: 3%;
+	margin-right: 10%;
+}
+
+.rowHack {
+  display: flex;
+}
+
+.columnHack {
+  flex: 50%;
+  box-shadow: 0;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.columnHack:hover {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.intro2 {
+	margin-left: 20%;
+	margin-top: 3%;
+	margin-right: 5%;
+	padding-bottom: 40px;
+}
+
+.intro4 {
+	margin-left: 5%;
+	margin-top: 3%;
+	margin-right: 20%;
+	padding-bottom: 40px;
+}
+
+.intro3 {
+	margin-left: 5%;
 	margin-top: 3%;
 	margin-right: 10%;
 }
@@ -36,6 +70,24 @@
 	width: 430px;
 	min-width: 300px;
 	margin-left: 0px;
+}
+
+#virginia {
+	opacity: 1;
+	transition: opacity .6s ease-out;
+}
+
+#checkout {
+	opacity: 1;
+	transition: opacity .6s ease-out;
+}
+
+#virginia:hover {
+	opacity: .6;
+}
+
+#checkout:hover {
+	opacity: .6;
 }
 
 .rotunda2 {
@@ -182,7 +234,18 @@
 	bottom: 15px;
 	color: white;
 	font-family: AvenirNext;
-	font-size: 25px
+	font-size: 25px;
+}
+
+.arrow {
+	position: absolute;
+	transition: opacity 0.5s ease;
+  	opacity: .6;
+	margin-left: 20px;
+}
+
+.arrow:hover {
+  	opacity: 1;
 }
 
 .boxText2 {
@@ -193,7 +256,7 @@
 	bottom: 59px;
 	color: white;
 	font-family: AvenirNext;
-	font-size: 15px
+	font-size: 15px;
 }
 
 .aegisText {
