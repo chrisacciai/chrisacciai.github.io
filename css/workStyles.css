@@ -3,14 +3,8 @@
   src:  url('../AvenirNextLTPro-Regular.woff') format('woff');
 }
 
-@media (max-width: 800px) {
-    #name {
-        display: none;
-    }
-}
-
-@media (max-width: 800px) {
-    #name {
+@media (max-width: 1150px) {
+    .rotunda {
         display: none;
     }
 }
@@ -23,8 +17,8 @@
 
 .rotunda {
 	margin-top: 0%;
-	width: 79%;
-	min-width: 370px;
+	width: 400px;
+	min-width: 300px;
 	margin-left: 0px;
 }
 
@@ -125,7 +119,7 @@
 .boxText {
 	position: absolute;
 	left: 15px;
-	bottom: 10px;
+	bottom: 5px;
 	color: white;
 	font-family: AvenirNext;
 	font-size: 27px
