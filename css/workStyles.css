@@ -47,7 +47,7 @@
 
 .box1 {
 	background-color: #5592FF;
-	opacity: .4;
+	opacity: .75;
 	transition: opacity .4s ease-out;
     -moz-transition: opacity .4s ease-out;
     -webkit-transition: opacity .4s ease-out;
@@ -58,7 +58,7 @@
 }
 
 #about {
-	opacity: .4;
+	opacity: .75;
 	transition: opacity .4s ease-out;
     -moz-transition: opacity .4s ease-out;
     -webkit-transition: opacity .4s ease-out;
@@ -69,7 +69,7 @@
 }
 
 #mail {
-	opacity: .4;
+	opacity: .75;
 	transition: opacity .4s ease-out;
     -moz-transition: opacity .4s ease-out;
     -webkit-transition: opacity .4s ease-out;
@@ -91,7 +91,7 @@
 }
 
 #internship {
-	opacity: .4;
+	opacity: .75;
 	transition: opacity .4s ease-out;
     -moz-transition: opacity .4s ease-out;
     -webkit-transition: opacity .4s ease-out;
@@ -102,7 +102,7 @@
 }
 
 #pp {
-	opacity: .4;
+	opacity: .75;
 	transition: opacity .4s ease-out;
     -moz-transition: opacity .4s ease-out;
     -webkit-transition: opacity .4s ease-out;
@@ -113,7 +113,7 @@
 }
 
 #linkedin {
-	opacity: .4;
+	opacity: .75;
 	transition: opacity .4s ease-out;
     -moz-transition: opacity .4s ease-out;
     -webkit-transition: opacity .4s ease-out;
@@ -124,7 +124,7 @@
 }
 
 #spotify {
-	opacity: .4;
+	opacity: .75;
 	transition: opacity .4s ease-out;
     -moz-transition: opacity .4s ease-out;
     -webkit-transition: opacity .4s ease-out;
@@ -178,7 +178,7 @@
 
 .box2 {
 	background-color: #9DD088;
-	opacity: .4;
+	opacity: .6;
 	transition: opacity .4s ease-out;
     -moz-transition: opacity .4s ease-out;
     -webkit-transition: opacity .4s ease-out;
@@ -190,7 +190,7 @@
 
 .box3 {
 	background-color: #E64D4D;
-	opacity: .4;
+	opacity: .6;
 	transition: opacity .4s ease-out;
     -moz-transition: opacity .4s ease-out;
     -webkit-transition: opacity .4s ease-out;
@@ -202,7 +202,7 @@
 
 .box4 {
 	background-color: #7F458E;
-	opacity: .4;
+	opacity: .6;
 	transition: opacity .4s ease-out;
     -moz-transition: opacity .4s ease-out;
     -webkit-transition: opacity .4s ease-out;
