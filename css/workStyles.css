@@ -22,7 +22,7 @@
 .intro {
 	margin-left: 10%;
 	margin-top: 3%;
-	margin-right: 6%;
+	margin-right: 5%;
 }
 
 .intro2 {
@@ -185,7 +185,7 @@
 }
 
 .box2 {
-	background-color: #9DD088;
+	background-color: #7CBC61;
 	opacity: .6;
 	transition: opacity .4s ease-out;
     -moz-transition: opacity .4s ease-out;
