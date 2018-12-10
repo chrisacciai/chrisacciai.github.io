@@ -9,15 +9,6 @@
     }
 }
 
-@media (max-width: 800px) {
-    .imageBox3 {
-		width: 190px;
-		margin: auto;
-		padding-top: 20%;
-		padding-bottom: 20%;
-    }
-}
-
 .intro {
 	margin-left: 10%;
 	margin-top: 3%;
