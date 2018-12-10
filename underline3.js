@@ -14,7 +14,7 @@ anim3 = lottie.loadAnimation(params);
 
 anim3.addEventListener('DOMLoaded', function(e) {
 
-  var elem3 = document.getElementById('work2');
+  var elem3 = document.getElementById('workHack');
 
   elem3.addEventListener('mouseover', forwardAnimation);
   elem3.addEventListener('mouseout', reverseAnimation);
