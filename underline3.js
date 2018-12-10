@@ -1,6 +1,6 @@
 animContainer3 = document.getElementById('lottie3')
  				
-var params = {
+var params3 = {
 	container: animContainer3,
 	renderer: 'svg',
 	loop: false,
@@ -10,7 +10,7 @@ var params = {
 };
  
 var anim3;
-anim3 = lottie.loadAnimation(params);
+anim3 = lottie.loadAnimation(params3);
 
 anim3.addEventListener('DOMLoaded', function(e) {
 
