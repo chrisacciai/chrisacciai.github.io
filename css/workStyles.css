@@ -122,10 +122,19 @@
 .boxText {
 	position: absolute;
 	left: 25px;
-	bottom: 5px;
+	bottom: 40px;
 	color: white;
 	font-family: AvenirNext;
 	font-size: 27px
+}
+
+.boxText2 {
+	position: absolute;
+	left: 25px;
+	bottom: 15px;
+	color: white;
+	font-family: AvenirNext;
+	font-size: 19px
 }
 
 .box2 {
