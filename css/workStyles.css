@@ -18,12 +18,12 @@
 .intro {
 	margin-left: 10%;
 	margin-top: 3%;
-	margin-right: 10%;
+	margin-right: 8%;
 }
 
 .rotunda {
 	margin-top: 0%;
-	width: 75%;
+	width: 79%;
 	min-width: 370px;
 	margin-left: 0px;
 }
@@ -65,6 +65,39 @@
     -o-transition: opacity .4s ease-out;
 }
 #about:hover {
+	opacity: 1;
+}
+
+#mail {
+	opacity: .4;
+	transition: opacity .4s ease-out;
+    -moz-transition: opacity .4s ease-out;
+    -webkit-transition: opacity .4s ease-out;
+    -o-transition: opacity .4s ease-out;
+}
+#mail:hover {
+	opacity: 1;
+}
+
+#linkedin {
+	opacity: .4;
+	transition: opacity .4s ease-out;
+    -moz-transition: opacity .4s ease-out;
+    -webkit-transition: opacity .4s ease-out;
+    -o-transition: opacity .4s ease-out;
+}
+#linkedin:hover {
+	opacity: 1;
+}
+
+#spotify {
+	opacity: .4;
+	transition: opacity .4s ease-out;
+    -moz-transition: opacity .4s ease-out;
+    -webkit-transition: opacity .4s ease-out;
+    -o-transition: opacity .4s ease-out;
+}
+#spotify:hover {
 	opacity: 1;
 }
 
