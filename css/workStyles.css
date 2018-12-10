@@ -10,14 +10,15 @@
 }
 
 .intro {
-	margin-left: 12%;
-	margin-top: 9%;
+	margin-left: 10%;
+	margin-top: 3%;
 	margin-right: 10%;
 }
 
 .rotunda {
-	margin-right: 9%;
-	margin-top: 3%;
+	margin-top: 0%;
+	width: 390px;
+	margin-left: 0px;
 }
 
 .laptop {
@@ -43,8 +44,33 @@
 	opacity: 1;
 }
 
+#about {
+	opacity: .4;
+	transition: opacity .4s ease-out;
+    -moz-transition: opacity .4s ease-out;
+    -webkit-transition: opacity .4s ease-out;
+    -o-transition: opacity .4s ease-out;
+}
+#about:hover {
+	opacity: 1;
+}
+
 .imageBox {
 	width: 270px;
+	margin: auto;
+	padding-top: 20%;
+	padding-bottom: 20%;
+}
+
+.imageBox2 {
+	width: 190px;
+	margin: auto;
+	padding-top: 20%;
+	padding-bottom: 20%;
+}
+
+.imageBox3 {
+	width: 200px;
 	margin: auto;
 	padding-top: 20%;
 	padding-bottom: 20%;
@@ -60,7 +86,7 @@
 }
 
 .box2 {
-	background-color: #B6A8B4;
+	background-color: #9DD088;
 	opacity: .4;
 	transition: opacity .4s ease-out;
     -moz-transition: opacity .4s ease-out;
@@ -72,7 +98,7 @@
 }
 
 .box3 {
-	background-color: #AB73A7;
+	background-color: #E64D4D;
 	opacity: .4;
 	transition: opacity .4s ease-out;
     -moz-transition: opacity .4s ease-out;
@@ -84,7 +110,7 @@
 }
 
 .box4 {
-	background-color: #5D3667;
+	background-color: #7F458E;
 	opacity: .4;
 	transition: opacity .4s ease-out;
     -moz-transition: opacity .4s ease-out;
