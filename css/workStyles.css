@@ -9,6 +9,15 @@
     }
 }
 
+@media (max-width: 800px) {
+    .imageBox3 {
+		width: 190px;
+		margin: auto;
+		padding-top: 20%;
+		padding-bottom: 20%;
+    }
+}
+
 .intro {
 	margin-left: 10%;
 	margin-top: 3%;
@@ -111,14 +120,17 @@
 
 .imageBox3 {
 	width: 200px;
-	margin: auto;
-	padding-top: 20%;
-	padding-bottom: 20%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10%;
+	padding-bottom: 10%;
+	margin-bottom: 0px;
+	margin-top: 0px;
 }
 
 .boxText {
 	position: absolute;
-	left: 15px;
+	left: 25px;
 	bottom: 5px;
 	color: white;
 	font-family: AvenirNext;
