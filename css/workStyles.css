@@ -68,14 +68,36 @@
 	opacity: 1;
 }
 
-#mail {
+#work2 {
 	opacity: .4;
 	transition: opacity .4s ease-out;
     -moz-transition: opacity .4s ease-out;
     -webkit-transition: opacity .4s ease-out;
     -o-transition: opacity .4s ease-out;
 }
-#mail:hover {
+#work2:hover {
+	opacity: 1;
+}
+
+#internship {
+	opacity: .4;
+	transition: opacity .4s ease-out;
+    -moz-transition: opacity .4s ease-out;
+    -webkit-transition: opacity .4s ease-out;
+    -o-transition: opacity .4s ease-out;
+}
+#internship:hover {
+	opacity: 1;
+}
+
+#pp {
+	opacity: .4;
+	transition: opacity .4s ease-out;
+    -moz-transition: opacity .4s ease-out;
+    -webkit-transition: opacity .4s ease-out;
+    -o-transition: opacity .4s ease-out;
+}
+#pp:hover {
 	opacity: 1;
 }
 
