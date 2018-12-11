@@ -26,8 +26,8 @@
 
 .intro {
 	margin-left: 10%;
-	margin-top: 3%;
-	margin-right: 5%;
+	margin-top: 1%;
+	margin-right: 3.5%;
 }
 
 .intro5 {
@@ -71,8 +71,8 @@
 }
 
 .rotunda {
-	margin-top: 0%;
-	width: 430px;
+	margin-top: -35px;
+	width: 435px;
 	min-width: 300px;
 	margin-left: 0px;
 }
@@ -142,6 +142,27 @@
 }
 #about:hover {
 	opacity: 1;
+}
+
+#homeLine {
+	width: 80px;
+	height: 2px;
+	background-color: #5592FF;
+	margin-top: 20px;
+	margin-left: 95px;
+	visibility: hidden;
+	display: inline-block;
+}
+
+#aboutLine {
+	position: absolute;
+	width: 80px;
+	height: 2px;
+	background-color: #5592FF;
+	margin-top: 20px;
+	margin-left: -7px;
+	visibility: hidden;
+	display: inline-block;
 }
 
 #mail {

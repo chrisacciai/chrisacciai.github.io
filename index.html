@@ -13,8 +13,9 @@
   </head>
   <body>
 	<div class="jumbotron jumbotron-fluid text-left" style="background-color: white; border: none; margin-left: 10%; margin-right: 12%; margin-top: -30px">
-		<element id="work" style="font-family: AvenirNext; color: #202123; font-size: 23px">Home</element> &nbsp &nbsp &nbsp &nbsp <element id="about" style="font-family: AvenirNext; font-size: 23px; color: #202123;">About</element>
-		<div style="width: 306px; white-space: nowrap; margin-left: -14px"><div id="lottie2" style="width: 65px; float: left; margin-left: 6px; margin-top: -11px"></div><div id="lottie" style="width: 65px; float:left; margin-left: 28.5px; margin-top: -11px"></div></div>
+		<a style="text-decoration: none" href="index.html"><element id="work" onMouseOver="show('aboutLine')" onMouseOut="hide('aboutLine')" style="font-family: AvenirNext; color: #202123; font-size: 23px">Home</element></a> &nbsp &nbsp &nbsp &nbsp <a style="text-decoration: none" href="about.html"><element id="about" onMouseOver="show('homeLine')" onMouseOut="hide('homeLine')" style="font-family: AvenirNext; font-size: 23px; color: #202123;">About</element></a>
+		<div><div id="aboutLine"></div>
+		<div id="homeLine"></div></div>
 	</div>
 	<div class="container-fluid">
 		<div class="row">
@@ -29,6 +30,14 @@
 			</div>
 		</div>
     </div>
+	<script>
+	  function show(id) {
+		document.getElementById(id).style.visibility = "visible";
+	  }
+	  function hide(id) {
+		document.getElementById(id).style.visibility = "hidden";
+	  }
+	</script>
 	<br>
     <br>
     <br>
