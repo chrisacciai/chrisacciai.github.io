@@ -30,6 +30,12 @@
 	margin-right: 10%;
 }
 
+.challenge {
+	margin-left: 20%;
+	margin-top: 1%;
+	margin-right: 20%;
+}
+
 .introR {
 	margin-left: 10%;
 	margin-top: 1%;
@@ -83,7 +89,7 @@
 
 .rotunda {
 	margin-top: -35px;
-	width: 425px;
+	width: 420px;
 	min-width: 300px;
 	margin-left: 0px;
 }
