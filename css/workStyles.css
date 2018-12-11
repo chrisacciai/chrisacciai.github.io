@@ -3,6 +3,11 @@
   src:  url('../AvenirNextLTPro-Regular.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'Choplin';
+  src:  url('../Choplin-Medium-DEMO.otf');
+}
+
 @media (max-width: 1150px) {
     .rotunda {
         display: none;
