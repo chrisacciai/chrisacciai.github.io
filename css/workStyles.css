@@ -27,13 +27,24 @@
 .intro {
 	margin-left: 10%;
 	margin-top: 1%;
-	margin-right: 3.5%;
+	margin-right: 10%;
+}
+
+.introR {
+	margin-left: 10%;
+	margin-top: 1%;
+	margin-right: 2%;
 }
 
 .intro5 {
 	margin-left: 10%;
-	margin-top: 3%;
+	margin-top: 1%;
 	margin-right: 10%;
+	margin-top: 0.5em;
+  	margin-bottom: 0.5em;
+	border-style: solid;
+  	border-width: 1px;	
+	border-color: lightgrey;
 }
 
 .rowHack {
@@ -72,7 +83,7 @@
 
 .rotunda {
 	margin-top: -35px;
-	width: 435px;
+	width: 425px;
 	min-width: 300px;
 	margin-left: 0px;
 }
@@ -145,22 +156,22 @@
 }
 
 #homeLine {
-	width: 80px;
+	width: 55px;
 	height: 2px;
 	background-color: #5592FF;
-	margin-top: 20px;
-	margin-left: 95px;
+	margin-top: 5px;
+	margin-left: 87px;
 	visibility: hidden;
 	display: inline-block;
 }
 
 #aboutLine {
 	position: absolute;
-	width: 80px;
+	width: 50px;
 	height: 2px;
 	background-color: #5592FF;
-	margin-top: 20px;
-	margin-left: -7px;
+	margin-top: 5px;
+	margin-left: -3px;
 	visibility: hidden;
 	display: inline-block;
 }
