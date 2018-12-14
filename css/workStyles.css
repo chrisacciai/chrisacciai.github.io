@@ -10,7 +10,7 @@
 
 @keyframes slideInFromRight {
   0% {
-    transform: translateX(10%);
+    transform: translateX(6%);
   }
   100% {
     transform: translateX(0%);
@@ -232,7 +232,7 @@
 	min-width: 300px;
 	flex-wrap: wrap;
 	margin-left: 10%;
-    animation: .6s ease-in-out 0s 1 slideInFromRight, 1s ease-in-out 0s 1 fadeIn;
+    animation: 1s ease-in-out 0s 1 slideInFromRight, 1s ease-in-out 0s 1 fadeIn;
 }
 
 #virginia {
