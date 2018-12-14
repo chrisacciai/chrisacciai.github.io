@@ -454,8 +454,12 @@
 	font-family: AvenirNext;
 	font-size: 15px;
 	margin-left: 10%;
-	margin-top: -7.5%;
+	margin-top: -25%;
 	margin-bottom:1%;
+}
+
+.picture {
+	margin-bottom: 18%;
 }
 
 .picture:hover .aboutHover  {
