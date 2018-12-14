@@ -22,19 +22,45 @@
   .challenge {
 		margin-left: 10% !important;
 		margin-right: 10% !important;
-		margin-bottom: 10% !important;
+		margin-bottom: 9% !important;
 	}
 	.info {
 		margin-left: 10% !important;
 		margin-right: 10% !important;
-		margin-bottom: 10% !important;
-		margin-top: 8% !important;
+		margin-bottom: 9% !important;
+		margin-top: 9% !important;
 	}
 	.info2 {
 		margin-left: 10% !important;
 		margin-right: 10% !important;
-		margin-bottom: 10% !important;
-		margin-top: 10% !important;
+		margin-bottom: 9% !important;
+		margin-top: 9% !important;
+	}
+	.info3 {
+		margin-left: 10% !important;
+		margin-right: 10% !important;
+		margin-bottom: 9% !important;
+		margin-top: 9% !important;
+	}
+	.info4 {
+		margin-left: 10% !important;
+		margin-right: 10% !important;
+		margin-bottom: 9% !important;
+		margin-top: 9% !important;
+	}
+	.intro6 {
+		margin-left: 10% !important;
+		margin-top: 3%;
+		margin-right: 10% !important;
+		padding-bottom: 40px;
+		margin-bottom: 9%;
+	}
+	.intro7 {
+		margin-left: 10% !important;
+		margin-top: 3%;
+		margin-right: 10% !important;
+		padding-bottom: 40px;
+		margin-bottom: 9%;
 	}
 }
 
@@ -42,7 +68,7 @@
   .ppPara {
     margin-left: 10% !important;
 	margin-right: 10% !important;
-	margin-bottom: 10% !important;
+	margin-bottom: 9% !important;
   }
 }
 
@@ -80,13 +106,18 @@
 .ppPara {
 	margin-left: 10%;
 	margin-right: 35%;
-	margin-bottom: 7%;
+	margin-bottom: 9%;
 }
 
 .challenge {
 	margin-left: 22%;
 	margin-right: 22%;
-	margin-bottom: 8%;
+	margin-bottom: 9%;
+}
+
+.challenge2 {
+	margin-left: 22%;
+	margin-right: 22%;
 }
 
 .intro5 {
@@ -95,10 +126,6 @@
 	margin-right: 10%;
 	margin-top: 0.5em;
   	margin-bottom: 0.5em;
-}
-
-.rowHack {
-  display: flex;
 }
 
 .info {
@@ -111,13 +138,25 @@
 	margin-right: 30%;
 }
 
-.columnHack {
-  flex: 50%;
+.info3 {
+	margin-top: 20%;
+	margin-left: 20%;
+	margin-right: 10%;
+}
+
+.info4 {
+	margin-top: 20%;
+	margin-right: 20%;
+	margin-left: 10%;
+}
+
+.col5 {
+  flex: 1;
   box-shadow: 0;
   transition: box-shadow 0.3s ease-in-out;
 }
 
-.columnHack:hover {
+.col5:hover {
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
@@ -133,6 +172,22 @@
 	margin-top: 3%;
 	margin-right: 20%;
 	padding-bottom: 40px;
+}
+
+.intro6 {
+	margin-left: 20%;
+	margin-top: 3%;
+	margin-right: 10%;
+	padding-bottom: 40px;
+	margin-bottom: 9%;
+}
+
+.intro7 {
+	margin-left: 10%;
+	margin-top: 3%;
+	margin-right: 20%;
+	padding-bottom: 40px;
+	margin-bottom: 9%;
 }
 
 .intro3 {
