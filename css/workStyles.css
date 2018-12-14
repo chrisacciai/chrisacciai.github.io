@@ -8,10 +8,49 @@
   src:  url('../Choplin-Medium-DEMO.otf');
 }
 
-@media (max-width: 1150px) {
-    .rotunda {
-        display: none;
-    }
+@media (max-width: 1000px) {
+  .flex-grid {
+    display: block !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .introPara {
+    margin-left: 10% !important;
+	margin-right: 10% !important;
+  }
+  .challenge {
+		margin-left: 10% !important;
+		margin-right: 10% !important;
+		margin-bottom: 10% !important;
+	}
+	.info {
+		margin-left: 10% !important;
+		margin-right: 10% !important;
+		margin-bottom: 10% !important;
+		margin-top: 8% !important;
+	}
+	.info2 {
+		margin-left: 10% !important;
+		margin-right: 10% !important;
+		margin-bottom: 10% !important;
+		margin-top: 10% !important;
+	}
+}
+
+@media (max-width: 1000px) {
+  .ppPara {
+    margin-left: 10% !important;
+	margin-right: 10% !important;
+	margin-bottom: 10% !important;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .rotunda {
+    display: none;
+  }
 }
 
 @media (max-width: 900px) {
@@ -24,22 +63,30 @@
     }
 }
 
+.rightPhone {
+	width: 55%;
+}
+
 .intro {
 	margin-left: 10%;
 	margin-top: 1%;
 	margin-right: 40%;
 }
 
-.challenge {
-	margin-left: 22%;
-	margin-top: 1%;
-	margin-right: 22%;
+.introPara {
+	margin-left: 20%;
 }
 
-.introR {
+.ppPara {
 	margin-left: 10%;
-	margin-top: 1%;
-	margin-right: 6.5%;
+	margin-right: 35%;
+	margin-bottom: 7%;
+}
+
+.challenge {
+	margin-left: 22%;
+	margin-right: 22%;
+	margin-bottom: 8%;
 }
 
 .intro5 {
@@ -52,6 +99,16 @@
 
 .rowHack {
   display: flex;
+}
+
+.info {
+	margin-top: 40%;
+	margin-left: 30%;
+}
+
+.info2 {
+	margin-top: 40%;
+	margin-right: 30%;
 }
 
 .columnHack {
@@ -84,11 +141,24 @@
 	margin-right: 10%;
 }
 
+.flex-grid {
+  display: flex;
+}
+
+.col1 {
+  flex: 1;
+}
+
+.col2 {
+  flex: 1;
+}
+
 .rotunda {
-	margin-top: -31px;
+	margin-top: -47px;
 	width: 410px;
 	min-width: 300px;
-	margin-left: 0px;
+	flex-wrap: wrap;
+	margin-left: 10%;
 }
 
 #virginia {
