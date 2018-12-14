@@ -7,15 +7,50 @@
     <title>About</title>
 
     <!-- Bootstrap -->
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="css/bootstrap-4.0.0.css" rel="stylesheet">
 	<link href="css/workStyles.css" rel="stylesheet">
 	<link rel="shortcut icon" type="image/png" href="/images/icon.png"/>
 
   </head>
   <body>
+<script>  
+AOS.init();
+
+// You can also pass an optional settings object
+// below listed default settings
+AOS.init({
+  // Global settings:
+  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+  startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+  initClassName: 'aos-init', // class applied after initialization
+  animatedClassName: 'aos-animate', // class applied on animation
+  useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+  disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+  throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+  
+
+  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+  offset: 120, // offset (in px) from the original trigger point
+  delay: 0, // values from 0 to 3000, with step 50ms
+  duration: 400, // values from 0 to 3000, with step 50ms
+  easing: 'ease', // default easing for AOS animations
+  once: false, // whether animation should happen only once - while scrolling down
+  mirror: false, // whether elements should animate out while scrolling past them
+  anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+});</script>
 	<div class="jumbotron jumbotron-fluid text-left" style="background-color: white; border: none; margin-left: 10%; margin-right: 12%; margin-top: -30px">
 		<a style="text-decoration: none" href="index.html"><element id="work2" style="font-family: AvenirNext; font-size: 18px; color: #202123">Home</element></a> &nbsp &nbsp &nbsp &nbsp <a style="text-decoration: none" href="about.html"><element id="about" style="font-family: AvenirNext; font-size: 18px; color: #202123">About</element></a>
 	</div>
+	 	<div data-aos="fade-up"
+    data-aos-delay="0"
+    data-aos-duration="700"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="true"
+    data-aos-anchor-placement="top-bottom">
 		<div class="flex-grid">
 		  <div class="text-left col1">
 			<div class="ppPara">
@@ -25,11 +60,27 @@
 			</div>
 		</div>
     </div>
+	  </div>
+		<div data-aos="fade-up"
+    data-aos-delay="0"
+    data-aos-duration="700"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="true"
+    data-aos-anchor-placement="top-bottom">
     <div class="picture">
 		<img style="width: 80%; margin: auto; display: block; border-radius: 3px; margin-bottom: 9%" alt="Responsive image" src="images/IMG_0341.JPG"/>
 		<div class="aboutHover">ARMPIT HAIR IN THE WIND</div>
 		<div class="aboutHover2">Colorado, circa 2017</div>
 	</div>
+	  </div>
+	 	<div data-aos="fade-up"
+    data-aos-delay="0"
+    data-aos-duration="700"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="true"
+    data-aos-anchor-placement="top-bottom">
 	<div class="container-fluid">
 		<div class="row">
 		  <div class="col-offset-0 text-center challenge2">
@@ -39,6 +90,7 @@
 			</div>
 		</div>
     </div> 
+	  </div>
 	<br>
 	<br>
        <div class="row">
@@ -50,7 +102,10 @@
              <p><br>© 2018 Christopher Acciai</p>
           </div>
 	  </div>
-	  
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>  
 	<script src="lottie.js" type="text/javascript"></script>
 	<script src="underline.js" type="text/javascript"></script>
 	<script src="underline3.js" type="text/javascript"></script>

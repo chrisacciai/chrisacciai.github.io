@@ -33,11 +33,11 @@ AOS.init({
   
 
   // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-  offset: 90, // offset (in px) from the original trigger point
+  offset: 120, // offset (in px) from the original trigger point
   delay: 0, // values from 0 to 3000, with step 50ms
-  duration: 3000, // values from 0 to 3000, with step 50ms
-  easing: 'ease-in-out', // default easing for AOS animations
-  once: true, // whether animation should happen only once - while scrolling down
+  duration: 400, // values from 0 to 3000, with step 50ms
+  easing: 'ease', // default easing for AOS animations
+  once: false, // whether animation should happen only once - while scrolling down
   mirror: false, // whether elements should animate out while scrolling past them
   anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
@@ -45,9 +45,9 @@ AOS.init({
 	<div class="jumbotron jumbotron-fluid text-left" style="background-color: white; border: none; margin-left: 10%; margin-right: 12%; margin-top: -30px">
 		<a style="text-decoration: none" href="index.html"><element id="work2" style="font-family: AvenirNext; font-size: 18px; color: #202123">Home</element></a> &nbsp &nbsp &nbsp &nbsp <a style="text-decoration: none" href="about.html"><element id="about" style="font-family: AvenirNext; font-size: 18px; color: #202123">About</element></a>
 	</div>
-	<div data-aos="slide-up"
-    data-aos-delay="20"
-    data-aos-duration="600"
+	<div data-aos="fade-up"
+    data-aos-delay="0"
+    data-aos-duration="700"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
     data-aos-once="true"
@@ -62,13 +62,19 @@ AOS.init({
 		</div>
     </div>
 	</div>
-    <div data-aos="slide-up">
+	<div data-aos="fade-up"
+    data-aos-delay="0"
+    data-aos-duration="700"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="true"
+    data-aos-anchor-placement="top-bottom">
     <div>
 		<img style="width: 100%; margin: auto; display: block; border-radius: 3px; margin-bottom: 9%" alt="Responsive image" src="images/spotifyheader.png"/>
 	</div>
-	<div data-aos="slide-up"
-    data-aos-delay="20"
-    data-aos-duration="600"
+	<div data-aos="fade-up"
+    data-aos-delay="0"
+    data-aos-duration="700"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
     data-aos-once="true"
@@ -85,9 +91,9 @@ AOS.init({
 	</div>
 	  </div>
 	<hr style="width: 80%; margin: auto; margin-bottom: 9%">
-	<div data-aos="slide-up"
-    data-aos-delay="20"
-    data-aos-duration="600"
+	<div data-aos="fade-up"
+    data-aos-delay="0"
+    data-aos-duration="700"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
     data-aos-once="true"
@@ -103,9 +109,9 @@ AOS.init({
 		</div>
 	</div>
 	</div>
-	<div data-aos="slide-up"
-    data-aos-delay="20"
-    data-aos-duration="600"
+	<div data-aos="fade-up"
+    data-aos-delay="0"
+    data-aos-duration="700"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
     data-aos-once="true"
@@ -118,12 +124,12 @@ AOS.init({
 		</div>
     </div>
 	</div>
-	<div data-aos="slide-up"
-    data-aos-delay="20"
-    data-aos-duration="900"
+	<div data-aos="fade-up"
+    data-aos-delay="0"
+    data-aos-duration="700"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
-    data-aos-once="false"
+    data-aos-once="true"
     data-aos-anchor-placement="top-bottom">
 	<div class="container-fluid">
 		<div class="row">
@@ -135,9 +141,9 @@ AOS.init({
 		</div>
 	</div>
 	</div>
-	<div data-aos="slide-up"
-    data-aos-delay="20"
-    data-aos-duration="600"
+	<div data-aos="fade-up"
+    data-aos-delay="0"
+    data-aos-duration="700"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
     data-aos-once="true"
@@ -158,9 +164,9 @@ AOS.init({
 	<br>
     <br>
     <br>
-	<div data-aos="slide-up"
-    data-aos-delay="20"
-    data-aos-duration="600"
+	<div data-aos="fade-up"
+    data-aos-delay="0"
+    data-aos-duration="700"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
     data-aos-once="true"
@@ -181,9 +187,9 @@ AOS.init({
 		<br>
 	    <br>
 		<br>
-	<div data-aos="slide-up"
-    data-aos-delay="20"
-    data-aos-duration="600"
+	<div data-aos="fade-up"
+    data-aos-delay="0"
+    data-aos-duration="700"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
     data-aos-once="true"
@@ -204,9 +210,9 @@ AOS.init({
 	<br>
     <br>
     <br>
-		<div data-aos="slide-up"
-    data-aos-delay="20"
-    data-aos-duration="600"
+	<div data-aos="fade-up"
+    data-aos-delay="0"
+    data-aos-duration="700"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
     data-aos-once="true"
@@ -227,18 +233,18 @@ AOS.init({
 	<br>
     <br>
     <br>
-	<div data-aos="slide-up"
-    data-aos-delay="20"
-    data-aos-duration="600"
+	<div data-aos="fade-up"
+    data-aos-delay="0"
+    data-aos-duration="700"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
     data-aos-once="true"
     data-aos-anchor-placement="top-bottom">
 		<img style="width: 100%; margin: auto; display: block; border-radius: 3px;; margin-bottom: 9%" alt="Responsive image" src="images/bar2.png"/>
 	</div>
-	<div data-aos="slide-up"
-    data-aos-delay="20"
-    data-aos-duration="600"
+	<div data-aos="fade-up"
+    data-aos-delay="0"
+    data-aos-duration="700"
     data-aos-easing="ease-in-out"
     data-aos-mirror="true"
     data-aos-once="true"
@@ -264,7 +270,6 @@ AOS.init({
              <p><br>© 2018 Christopher Acciai</p>
           </div>
 	  </div>
-	 
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();

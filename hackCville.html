@@ -7,15 +7,50 @@
     <title>HackCville</title>
 
     <!-- Bootstrap -->
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="css/bootstrap-4.0.0.css" rel="stylesheet">
 	<link href="css/workStyles.css" rel="stylesheet">
 	<link rel="shortcut icon" type="image/png" href="/images/icon.png"/>
 
   </head>
   <body>
+<script>  
+AOS.init();
+
+// You can also pass an optional settings object
+// below listed default settings
+AOS.init({
+  // Global settings:
+  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+  startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+  initClassName: 'aos-init', // class applied after initialization
+  animatedClassName: 'aos-animate', // class applied on animation
+  useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+  disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+  throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+  
+
+  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+  offset: 120, // offset (in px) from the original trigger point
+  delay: 0, // values from 0 to 3000, with step 50ms
+  duration: 400, // values from 0 to 3000, with step 50ms
+  easing: 'ease', // default easing for AOS animations
+  once: false, // whether animation should happen only once - while scrolling down
+  mirror: false, // whether elements should animate out while scrolling past them
+  anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+});</script>
 	<div class="jumbotron jumbotron-fluid text-left" style="background-color: white; border: none; margin-left: 10%; margin-right: 12%; margin-top: -30px">
 		<a style="text-decoration: none" href="index.html"><element id="work2" style="font-family: AvenirNext; font-size: 18px; color: #202123">Home</element></a> &nbsp &nbsp &nbsp &nbsp <a style="text-decoration: none" href="about.html"><element id="about" style="font-family: AvenirNext; font-size: 18px; color: #202123">About</element></a>
 	</div>
+	<div data-aos="fade-up"
+    data-aos-delay="0"
+    data-aos-duration="700"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="true"
+    data-aos-anchor-placement="top-bottom">
 		<div class="flex-grid">
 		  <div class="text-left col1">
 			<div class="ppPara">
@@ -25,6 +60,14 @@
 			</div>
 		</div>
     </div>
+	  </div>
+		<div data-aos="fade-up"
+    data-aos-delay="0"
+    data-aos-duration="700"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="true"
+    data-aos-anchor-placement="top-bottom">
 		<div class="flex-grid">
 		  <a style="text-decoration: none" href="https://hackcville.com/about/" target="_blank"><div class="col5 text-left intro6">
 			<div style="background-color: #1D72BD; border-radius: 3px">
@@ -51,7 +94,15 @@
 			</div>	
 			</div></a>
 		</div>
+	  </div>
 	<hr style="width: 80%; margin: auto; margin-bottom: 9%;">
+	<div data-aos="fade-up"
+    data-aos-delay="0"
+    data-aos-duration="700"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="true"
+    data-aos-anchor-placement="top-bottom">
 	<div class="container-fluid">
 		<div class="row">
 		  <div class="col-offset-0 text-center challenge">
@@ -60,7 +111,8 @@
 				<p style="font-family: AvenirNext ; color:#9B9B9B; font-size: 20px; opacity: .75; color: #202123">I am currently working with a team of six to build and design an ecommerce platform that allows students to rent items from one another. I am the sole designer on the team and focus on the design and usability of the platform while also contributing to the code base.</p>
 			</div>
 		</div>
-    </div> 
+    </div>
+	  </div>
     <div>
 		<img style="width: 100%; margin: auto; display: block; border-radius: 3px" alt="Responsive image" src="images/Squad.png"/>
 	</div>
@@ -75,7 +127,10 @@
              <p><br>© 2018 Christopher Acciai</p>
           </div>
 	  </div>
-	  
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>  
 	<script src="lottie.js" type="text/javascript"></script>
 	<script src="underline.js" type="text/javascript"></script>
 	<script src="underline3.js" type="text/javascript"></script>
