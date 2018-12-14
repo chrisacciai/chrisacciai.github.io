@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Personal Project</title>
+	 
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- Bootstrap -->
     <link href="css/bootstrap-4.0.0.css" rel="stylesheet">
@@ -13,9 +15,43 @@
 	  
   </head>
   <body>
+<script>  
+AOS.init();
+
+// You can also pass an optional settings object
+// below listed default settings
+AOS.init({
+  // Global settings:
+  disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+  startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+  initClassName: 'aos-init', // class applied after initialization
+  animatedClassName: 'aos-animate', // class applied on animation
+  useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+  disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+  debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+  throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+  
+
+  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+  offset: 90, // offset (in px) from the original trigger point
+  delay: 0, // values from 0 to 3000, with step 50ms
+  duration: 3000, // values from 0 to 3000, with step 50ms
+  easing: 'ease-in-out', // default easing for AOS animations
+  once: true, // whether animation should happen only once - while scrolling down
+  mirror: false, // whether elements should animate out while scrolling past them
+  anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+});</script>
 	<div class="jumbotron jumbotron-fluid text-left" style="background-color: white; border: none; margin-left: 10%; margin-right: 12%; margin-top: -30px">
 		<a style="text-decoration: none" href="index.html"><element id="work2" style="font-family: AvenirNext; font-size: 18px; color: #202123">Home</element></a> &nbsp &nbsp &nbsp &nbsp <a style="text-decoration: none" href="about.html"><element id="about" style="font-family: AvenirNext; font-size: 18px; color: #202123">About</element></a>
 	</div>
+	<div data-aos="slide-up"
+    data-aos-delay="20"
+    data-aos-duration="600"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="true"
+    data-aos-anchor-placement="top-bottom">
 		<div class="flex-grid">
 		  <div class="text-left col1">
 			<div class="ppPara">
@@ -25,9 +61,18 @@
 			</div>
 		</div>
     </div>
+	</div>
+    <div data-aos="slide-up">
     <div>
 		<img style="width: 100%; margin: auto; display: block; border-radius: 3px; margin-bottom: 9%" alt="Responsive image" src="images/spotifyheader.png"/>
 	</div>
+	<div data-aos="slide-up"
+    data-aos-delay="20"
+    data-aos-duration="600"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="true"
+    data-aos-anchor-placement="top-bottom">
 	<div class="container-fluid">
 		<div class="row">
 		  <div class="col-offset-0 text-center challenge">
@@ -37,7 +82,16 @@
 			</div>
 		</div>	
     </div>
+	</div>
+	  </div>
 	<hr style="width: 80%; margin: auto; margin-bottom: 9%">
+	<div data-aos="slide-up"
+    data-aos-delay="20"
+    data-aos-duration="600"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="true"
+    data-aos-anchor-placement="top-bottom">
 	<div class="container-fluid">
 		<div class="row">
 		  <div class="col-offset-0 text-center challenge">
@@ -48,6 +102,14 @@
 			</div>
 		</div>
 	</div>
+	</div>
+	<div data-aos="slide-up"
+    data-aos-delay="20"
+    data-aos-duration="600"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="true"
+    data-aos-anchor-placement="top-bottom">
 	<div class="container-fluid">
 		<div class="row">
 		  <div class="challenge">
@@ -55,6 +117,14 @@
 			</div>
 		</div>
     </div>
+	</div>
+	<div data-aos="slide-up"
+    data-aos-delay="20"
+    data-aos-duration="900"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="false"
+    data-aos-anchor-placement="top-bottom">
 	<div class="container-fluid">
 		<div class="row">
 		  <div class="text-center challenge">
@@ -64,6 +134,14 @@
 			</div>
 		</div>
 	</div>
+	</div>
+	<div data-aos="slide-up"
+    data-aos-delay="20"
+    data-aos-duration="600"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="true"
+    data-aos-anchor-placement="top-bottom">
 		<div class="flex-grid">
 			<div class="text-center col1">
 			<div class="info">
@@ -76,9 +154,17 @@
 				<img style="width: 55%" alt="Responsive image" src="images/iphone1.png"/>
 			</div>
 		</div>
+	</div>
 	<br>
     <br>
     <br>
+	<div data-aos="slide-up"
+    data-aos-delay="20"
+    data-aos-duration="600"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="true"
+    data-aos-anchor-placement="top-bottom">
 		<div class="flex-grid">
 			<div class="col1 text-center">
 				<img style="width: 55%" alt="Responsive image" src="images/iphone2.png"/>
@@ -91,9 +177,17 @@
 					</div>
 			</div>
 		</div>
+	</div>
 		<br>
 	    <br>
 		<br>
+	<div data-aos="slide-up"
+    data-aos-delay="20"
+    data-aos-duration="600"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="true"
+    data-aos-anchor-placement="top-bottom">
 		<div class="flex-grid">
 			<div class="text-center col1">
 			<div class="info">
@@ -106,9 +200,17 @@
 				<img style="width: 55%" alt="Responsive image" src="images/iphone3.png"/>
 			</div>
 		</div>
+	</div>
 	<br>
     <br>
     <br>
+		<div data-aos="slide-up"
+    data-aos-delay="20"
+    data-aos-duration="600"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="true"
+    data-aos-anchor-placement="top-bottom">
 		<div class="flex-grid">
 		  <div class="col1 text-center">
 				<img style="width: 55%" alt="Responsive image" src="images/iphone4.png"/>
@@ -121,11 +223,35 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	<br>
     <br>
     <br>
-    <div>
-		<img style="width: 100%; margin: auto; display: block; border-radius: 3px;" alt="Responsive image" src="images/bar2.png"/>
+	<div data-aos="slide-up"
+    data-aos-delay="20"
+    data-aos-duration="600"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="true"
+    data-aos-anchor-placement="top-bottom">
+		<img style="width: 100%; margin: auto; display: block; border-radius: 3px;; margin-bottom: 9%" alt="Responsive image" src="images/bar2.png"/>
+	</div>
+	<div data-aos="slide-up"
+    data-aos-delay="20"
+    data-aos-duration="600"
+    data-aos-easing="ease-in-out"
+    data-aos-mirror="true"
+    data-aos-once="true"
+    data-aos-anchor-placement="top-bottom">
+	<div class="container-fluid">
+		<div class="row">
+		  <div class="text-center challenge2">
+		    <h2 style="font-family: AvenirNext; font-size: 35px; color: #202123">What's coming</h2>
+		    <br>
+				<p style="font-family: AvenirNext ; color:#9B9B9B; font-size: 20px; opacity: .75; color: #202123">I'm currently in the process of testing my prototype as it will certainly need further design and exploration. Stay tuned.</p>
+			</div>
+		</div>
+	</div>
 	</div>
 	<br>
     <br>
@@ -138,7 +264,11 @@
              <p><br>© 2018 Christopher Acciai</p>
           </div>
 	  </div>
-	  
+	 
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 	<script src="lottie.js" type="text/javascript"></script>
 	<script src="underline.js" type="text/javascript"></script>
 	<script src="underline3.js" type="text/javascript"></script>
