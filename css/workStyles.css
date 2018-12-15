@@ -86,6 +86,10 @@
 		padding-bottom: 40px;
 		margin-bottom: 9%;
 	}
+	.challenge2 {
+		margin-left: 10% !important;
+		margin-right: 10% !important;
+	}
 }
 
 @media (max-width: 1000px) {
@@ -484,7 +488,7 @@
 }
 
 .picture {
-	margin-bottom: 18%;
+	margin-bottom: 9%;
 }
 
 .picture:hover .aboutHover  {
