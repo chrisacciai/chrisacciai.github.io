@@ -33,6 +33,12 @@
 }
 
 @media (max-width: 1000px) {
+  .aboutHover {
+    margin-top: -25% !important;
+  }
+}
+
+@media (max-width: 1000px) {
   .introPara {
     margin-left: 10% !important;
 	margin-right: 10% !important;
@@ -473,7 +479,7 @@
 	font-family: AvenirNext;
 	font-size: 15px;
 	margin-left: 10%;
-	margin-top: -25%;
+	margin-top: -17%;
 	margin-bottom:1%;
 }
 
