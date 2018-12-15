@@ -10,15 +10,57 @@
 
 @keyframes slideInFromRight {
   0% {
-    transform: translateX(6%);
+    transform: translateX(10%);
   }
   100% {
     transform: translateX(0%);
   }
 }
 
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
 @keyframes fadeIn{
   0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn2{
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn3{
+  0% {
+    opacity: 0;
+  }
+  60% {
     opacity: 0;
   }
   100% {
@@ -129,6 +171,7 @@
 
 .introPara {
 	margin-left: 20%;
+    animation: 1s ease-in-out 0s 1 slideInFromLeft, 1s ease-in-out 0s 1 fadeIn;
 }
 
 .ppPara {
@@ -242,7 +285,7 @@
 	min-width: 300px;
 	flex-wrap: wrap;
 	margin-left: 10%;
-    animation: 1s ease-in-out 0s 1 slideInFromRight, 1s ease-in-out 0s 1 fadeIn;
+    animation: 1s ease-in-out 0s 1 slideInFromRight, 1s ease-in-out 0s 1 fadeIn2;
 }
 
 #virginia {
@@ -279,6 +322,10 @@
 
 .jumbotron-fluid {
 	background-color: #FAFAFA;
+}
+
+.transition {
+    animation: 1s ease-in-out 0s 1 slideInFromBottom, 1s ease-in-out 0s 1 fadeIn3;
 }
 
 .box1 {
