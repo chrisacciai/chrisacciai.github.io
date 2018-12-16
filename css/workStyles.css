@@ -3,6 +3,8 @@
   src:  url('../AvenirNextLTPro-Regular.woff') format('woff');
 }
 
+
+
 @font-face {
   font-family: 'Choplin';
   src:  url('../Choplin-Medium-DEMO.otf');
@@ -132,6 +134,27 @@
 		margin-left: 10% !important;
 		margin-right: 10% !important;
 	}
+	#about {
+		margin-top: 9% !important;
+	}
+	.boxText {
+		visibility: hidden;
+	}
+	.aegisText {
+		visibility: hidden;
+	}
+	.boxText2 {
+		visibility: hidden;
+	}
+	.aegisText2 {
+		visibility: hidden;
+	}
+	.hackText {
+		visibility: hidden;
+	}
+	.hackText2 {
+		visibility: hidden;
+	}
 }
 
 @media (max-width: 1000px) {
@@ -149,13 +172,10 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .imageBox3 {
-	width: 200px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 40%;
-	padding-bottom: 40%;
+	padding-top: 20% !important;
+	padding-bottom: 20% !important;
     }
 }
 
