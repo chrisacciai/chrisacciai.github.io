@@ -155,6 +155,13 @@
 	.hackText2 {
 		visibility: hidden;
 	}
+	.box1 {
+		margin-right: 0px !important;
+	}
+	.box2 {
+		margin-left: 0px !important;
+		margin-top: 2px !important;
+	}
 }
 
 @media (max-width: 1000px) {
@@ -355,6 +362,8 @@
     -moz-transition: opacity .4s ease-out;
     -webkit-transition: opacity .4s ease-out;
     -o-transition: opacity .4s ease-out;
+	margin-right: 2px;
+	margin-bottom: 2px;
 }
 .box1:hover {
 	opacity: 1;
@@ -609,6 +618,8 @@
     -moz-transition: opacity .6s ease-out;
     -webkit-transition: opacity .6s ease-out;
     -o-transition: opacity .6s ease-out;
+	margin-left: 2px;
+	margin-bottom: 2px;
 }
 .box2:hover {
 	opacity: 1;
@@ -631,6 +642,7 @@
     -moz-transition: opacity .6s ease-out;
     -webkit-transition: opacity .6s ease-out;
     -o-transition: opacity .6s ease-out;
+	margin-top: 2px;
 }
 .box3:hover {
 	opacity: 1;
