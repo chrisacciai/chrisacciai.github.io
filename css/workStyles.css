@@ -164,12 +164,25 @@
 	.hackText2 {
 		visibility: hidden;
 	}
+	.scheduleText {
+		visibility: hidden;
+	}
+	.scheduleText2 {
+		visibility: hidden;
+	}
 	.box1 {
 		margin-right: 0px !important;
 	}
 	.box2 {
 		margin-left: 0px !important;
 		margin-top: 2px !important;
+	}
+	.box4 {
+		margin-right: 0px !important;
+		margin-bottom: 2px !important;
+	}
+	.box3 {
+		margin-left: 0px !important;
 	}
 }
 
@@ -255,7 +268,25 @@
 	margin-right: 10%;
 }
 
+.info6 {
+	margin-top: 12%;
+	margin-left: 20%;
+	margin-right: 10%;
+}
+
 .info4 {
+	margin-top: 20%;
+	margin-right: 20%;
+	margin-left: 10%;
+}
+
+.info7 {
+	margin-top: 28%;
+	margin-right: 20%;
+	margin-left: 10%;
+}
+
+.info8 {
 	margin-top: 20%;
 	margin-right: 20%;
 	margin-left: 10%;
@@ -510,6 +541,13 @@
 	padding-bottom: 10%;
 }
 
+.imageBox4 {
+	width: 180px;
+	margin: auto;
+	padding-top: 20%;
+	padding-bottom: 20%;
+}
+
 .boxText {
 	position: absolute;
 	transition: opacity 0.5s ease, left 0.5s ease;
@@ -623,6 +661,27 @@
 	font-size: 15px
 }
 
+.scheduleText {
+	position: absolute;
+	transition: opacity 0.5s ease, left 0.5s ease;
+  	opacity: 0;
+	left: 0px;
+	bottom: 15px;
+	color: white;
+	font-family: AvenirNext;
+	font-size: 25px
+}
+
+.scheduleText2 {
+	position: absolute;
+	transition: opacity 0.5s ease, left 0.5s ease;
+  	opacity: 0;
+	left: 0px;
+	bottom: 59px;
+	color: white;
+	font-family: AvenirNext;
+	font-size: 15px
+}
 
 .box2 {
 	background-color: #1ED35F;
@@ -656,6 +715,18 @@
     -webkit-transition: opacity .6s ease-out;
     -o-transition: opacity .6s ease-out;
 	margin-top: 2px;
+	margin-left: 2px;
+}
+
+.box4 {
+	background-color: #B874CD;
+	opacity: .6;
+	transition: opacity .6s ease-out;
+    -moz-transition: opacity .6s ease-out;
+    -webkit-transition: opacity .6s ease-out;
+    -o-transition: opacity .6s ease-out;
+	margin-top: 2px;
+	margin-right: 2px;	
 }
 .box3:hover {
 	opacity: 1;
@@ -665,6 +736,18 @@
 	left: 25px;
 }
 .box3:hover .hackText2 {
+	opacity: 1;
+	left: 25px;
+}
+
+.box4:hover {
+	opacity: 1;
+}
+.box4:hover .scheduleText {
+	opacity: 1;
+	left: 25px;
+}
+.box4:hover .scheduleText2 {
 	opacity: 1;
 	left: 25px;
 }
