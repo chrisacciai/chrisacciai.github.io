@@ -113,6 +113,30 @@
 		margin-bottom: 9% !important;
 		margin-top: 9% !important;
 	}
+	.info10 {
+		margin-left: 10% !important;
+		margin-right: 10% !important;
+		margin-bottom: 9% !important;
+		margin-top: 9% !important;
+	}
+	.info7 {
+		margin-left: 10% !important;
+		margin-right: 10% !important;
+		margin-bottom: 9% !important;
+		margin-top: 9% !important;
+	}
+	.info6 {
+		margin-left: 10% !important;
+		margin-right: 10% !important;
+		margin-bottom: 9% !important;
+		margin-top: 9% !important;
+	}
+	.info8 {
+		margin-left: 10% !important;
+		margin-right: 10% !important;
+		margin-bottom: 9% !important;
+		margin-top: 9% !important;
+	}
 	.info3 {
 		margin-left: 10% !important;
 		margin-right: 10% !important;
@@ -276,6 +300,12 @@
 
 .info4 {
 	margin-top: 20%;
+	margin-right: 20%;
+	margin-left: 10%;
+}
+
+.info10 {
+	margin-top: 14%;
 	margin-right: 20%;
 	margin-left: 10%;
 }
