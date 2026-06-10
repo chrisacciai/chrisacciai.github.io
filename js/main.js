@@ -86,19 +86,57 @@ const connectNav = document.querySelector('.nav-item[data-panel="connect"]');
 const panels = document.querySelectorAll(".panel");
 const page = document.querySelector(".page");
 
+function photoSrc(file, full) {
+  const size = full ? "full" : "half";
+  return `${PHOTOGRAPHY_DIR}${size}/${file}`;
+}
+
 function renderPhotoGallery() {
   const gallery = document.getElementById("photo-gallery");
   if (!gallery) return;
 
-  gallery.innerHTML = PHOTOGRAPHY.map((entry) => {
+  gallery.innerHTML = PHOTOGRAPHY.map((entry, index) => {
     const file = typeof entry === "string" ? entry : entry.file;
     const full = typeof entry === "string" ? false : entry.full;
     const className = full
       ? "photo-gallery__item photo-gallery__item--full"
       : "photo-gallery__item";
+    const eager = index < 4 ? ' fetchpriority="high"' : "";
 
-    return `<figure class="${className}"><img src="${PHOTOGRAPHY_DIR}${file}" alt="Film photograph" loading="lazy"></figure>`;
+    return `<figure class="${className}"><img data-src="${photoSrc(file, full)}" alt="Film photograph" decoding="async"${eager}></figure>`;
   }).join("");
+
+  lazyLoadGalleryImages(gallery);
+}
+
+function lazyLoadGalleryImages(gallery) {
+  const images = gallery.querySelectorAll("img[data-src]");
+
+  if (!("IntersectionObserver" in window)) {
+    images.forEach((img) => {
+      img.src = img.dataset.src;
+      img.removeAttribute("data-src");
+      img.addEventListener("load", () => img.classList.add("is-loaded"), { once: true });
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.removeAttribute("data-src");
+        img.addEventListener("load", () => img.classList.add("is-loaded"), { once: true });
+        observer.unobserve(img);
+      });
+    },
+    { root: page, rootMargin: "400px 0px" }
+  );
+
+  images.forEach((img) => observer.observe(img));
 }
 
 function setActiveSection(activeButton) {

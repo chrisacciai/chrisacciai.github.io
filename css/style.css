@@ -276,6 +276,13 @@ a:hover {
   width: 100%;
   height: auto;
   display: block;
+  background: #f4f4f4;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.photo-gallery__item img.is-loaded {
+  opacity: 1;
 }
 
 .photo-gallery__item:first-child img {
