@@ -1,0 +1,5 @@
+{
+  "booksDatabaseId": "your-books-database-id",
+  "writingsDatabaseId": "your-writings-database-id",
+  "booksDefaultYear": "2026"
+}

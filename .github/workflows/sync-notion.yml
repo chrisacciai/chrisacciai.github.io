@@ -1,0 +1,38 @@
+name: Sync Notion content
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 12 * * *"
+  push:
+    branches: [main, master]
+    paths:
+      - notion.config.json
+      - scripts/sync-notion.mjs
+      - .github/workflows/sync-notion.yml
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Sync Books and Writings from Notion
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: node scripts/sync-notion.mjs
+
+      - name: Commit updated data files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/books.json data/writings.json
+          git diff --staged --quiet || git commit -m "Sync Books and Writings from Notion"
+          git push

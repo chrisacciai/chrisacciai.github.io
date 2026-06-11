@@ -1,0 +1,29 @@
+{
+  "sections": [
+    {
+      "year": "2026",
+      "books": [
+        {
+          "title": "A Gentleman in Moscow",
+          "year": "2026"
+        },
+        {
+          "title": "Digital Minimalism",
+          "year": "2026"
+        },
+        {
+          "title": "East of Eden",
+          "year": "2026"
+        },
+        {
+          "title": "Lonesome Dove",
+          "year": "2026"
+        },
+        {
+          "title": "The Sympathizer",
+          "year": "2026"
+        }
+      ]
+    }
+  ]
+}

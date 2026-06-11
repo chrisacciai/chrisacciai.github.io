@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "scripts": {
+    "sync:notion": "node scripts/sync-notion.mjs",
+    "discover:notion": "node scripts/sync-notion.mjs --discover"
+  }
+}

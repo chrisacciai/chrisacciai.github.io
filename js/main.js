@@ -86,6 +86,99 @@ const connectNav = document.querySelector('.nav-item[data-panel="connect"]');
 const panels = document.querySelectorAll(".panel");
 const page = document.querySelector(".page");
 
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+}
+
+function formatWritingDate(date) {
+  if (!date) return "";
+  const parsed = new Date(date);
+  if (Number.isNaN(parsed.getTime())) return date;
+  return parsed.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+}
+
+function renderBooks(data) {
+  const container = document.getElementById("books-content");
+  if (!container) return;
+
+  const sections = data?.sections || [];
+  if (!sections.length) {
+    container.innerHTML = '<p class="panel-empty">No books yet.</p>';
+    return;
+  }
+
+  container.innerHTML = sections
+    .map(
+      (section) => `
+        <div class="section">
+          <h2 class="section-title">${escapeHtml(section.year)}</h2>
+          ${section.books
+            .map(
+              (book) =>
+                `<p class="book-title">${escapeHtml(book.title)}</p>`
+            )
+            .join("")}
+        </div>`
+    )
+    .join("");
+}
+
+function renderWritings(data) {
+  const container = document.getElementById("writings-content");
+  if (!container) return;
+
+  const items = data?.items || [];
+  if (!items.length) {
+    container.innerHTML = '<p class="panel-empty">No writings yet.</p>';
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="section">
+      <h2 class="section-title">Writings</h2>
+      ${items
+        .map((item) => {
+          const safeUrl =
+            item.url && /^https?:\/\//i.test(item.url) ? item.url : "";
+          const label = safeUrl
+            ? `<a href="${safeUrl.replaceAll('"', "%22")}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a>`
+            : escapeHtml(item.title);
+
+          return `
+            <article class="entry">
+              <p class="entry-date">${escapeHtml(formatWritingDate(item.date))}</p>
+              <div class="entry-details">
+                <p class="entry-role writing-title">${label}</p>
+              </div>
+            </article>`;
+        })
+        .join("")}
+    </div>`;
+}
+
+async function loadNotionContent() {
+  const [booksResult, writingsResult] = await Promise.allSettled([
+    fetch("data/books.json").then((response) => response.json()),
+    fetch("data/writings.json").then((response) => response.json()),
+  ]);
+
+  if (booksResult.status === "fulfilled") {
+    renderBooks(booksResult.value);
+  }
+
+  if (writingsResult.status === "fulfilled") {
+    renderWritings(writingsResult.value);
+  }
+}
+
 function photoSrc(file, full) {
   const size = full ? "full" : "half";
   return `${PHOTOGRAPHY_DIR}${size}/${file}`;
@@ -188,4 +281,5 @@ navItems.forEach((button) => {
 });
 
 renderPhotoGallery();
+loadNotionContent();
 activateNav(document.querySelector(`.nav-item[data-panel="${DEFAULT_PANEL}"]`));

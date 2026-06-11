@@ -211,7 +211,8 @@ a:hover {
 
 .panel#about,
 .panel#resume,
-.panel#books {
+.panel#books,
+.panel#writings {
   display: grid;
   grid-template-columns: max-content 1fr;
   column-gap: 24px;
@@ -220,7 +221,8 @@ a:hover {
 }
 
 .panel#books .section,
-.panel#resume .section {
+.panel#resume .section,
+.panel#writings .section {
   display: contents;
 }
 
@@ -232,6 +234,11 @@ a:hover {
   grid-column: 1 / -1;
   color: var(--text);
   line-height: 1.4;
+}
+
+.panel#writings .writing-title a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .section-title {
@@ -395,7 +402,8 @@ a:hover {
 
   .panel#about,
   .panel#resume,
-  .panel#books {
+  .panel#books,
+  .panel#writings {
     column-gap: 16px;
   }
 
