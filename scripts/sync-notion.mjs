@@ -52,16 +52,14 @@ function getPlainText(properties, names) {
   return "";
 }
 
-function getYear(properties, fallbackYear) {
-  const fromNumber = getPlainText(properties, ["Year", "year", "Read Year"]);
-  if (fromNumber) return fromNumber;
-
-  for (const name of ["Finished", "Date", "date", "Read"]) {
-    const prop = properties[name];
-    if (prop?.type === "date" && prop.date?.start) {
-      return prop.date.start.slice(0, 4);
-    }
+function getFinishedDate(properties, fallbackYear) {
+  const finished = properties.Finished;
+  if (finished?.type === "date" && finished.date?.start) {
+    return finished.date.start;
   }
+
+  const year = getPlainText(properties, ["Year", "year", "Read Year"]);
+  if (year) return year;
 
   return fallbackYear;
 }
@@ -114,24 +112,27 @@ async function queryDatabase(databaseId) {
   return pages;
 }
 
-function groupBooks(pages, fallbackYear) {
-  const groups = new Map();
+function sortKey(date) {
+  return /^\d{4}$/.test(date) ? `${date}-12-31` : date;
+}
 
-  for (const page of pages) {
-    const title = getTitle(page.properties);
-    if (!title) continue;
+function mapBooks(pages, fallbackYear) {
+  return pages
+    .map((page) => {
+      const title = getTitle(page.properties);
+      if (!title) return null;
 
-    const year = getYear(page.properties, fallbackYear);
-    if (!groups.has(year)) groups.set(year, []);
-    groups.get(year).push({ title, year });
-  }
-
-  return [...groups.entries()]
-    .sort(([a], [b]) => Number(b) - Number(a))
-    .map(([year, books]) => ({
-      year,
-      books: books.sort((a, b) => a.title.localeCompare(b.title)),
-    }));
+      return {
+        title,
+        date: getFinishedDate(page.properties, fallbackYear),
+      };
+    })
+    .filter(Boolean)
+    .sort(
+      (a, b) =>
+        sortKey(b.date).localeCompare(sortKey(a.date)) ||
+        a.title.localeCompare(b.title)
+    );
 }
 
 function mapWritings(pages) {
@@ -208,7 +209,7 @@ async function main() {
     const fallbackYear = config.booksDefaultYear || String(new Date().getFullYear());
     writeFileSync(
       join(DATA_DIR, "books.json"),
-      `${JSON.stringify({ sections: groupBooks(booksPages, fallbackYear) }, null, 2)}\n`
+      `${JSON.stringify({ items: mapBooks(booksPages, fallbackYear) }, null, 2)}\n`
     );
     console.log(`Wrote ${booksPages.length} book entries`);
   }

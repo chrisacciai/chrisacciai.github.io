@@ -1,29 +1,24 @@
 {
-  "sections": [
+  "items": [
     {
-      "year": "2026",
-      "books": [
-        {
-          "title": "A Gentleman in Moscow",
-          "year": "2026"
-        },
-        {
-          "title": "Digital Minimalism",
-          "year": "2026"
-        },
-        {
-          "title": "East of Eden",
-          "year": "2026"
-        },
-        {
-          "title": "Lonesome Dove",
-          "year": "2026"
-        },
-        {
-          "title": "The Sympathizer",
-          "year": "2026"
-        }
-      ]
+      "title": "A Gentleman in Moscow",
+      "date": "2026"
+    },
+    {
+      "title": "Digital Minimalism",
+      "date": "2026"
+    },
+    {
+      "title": "East of Eden",
+      "date": "2026"
+    },
+    {
+      "title": "Lonesome Dove",
+      "date": "2026"
+    },
+    {
+      "title": "The Sympathizer",
+      "date": "2026"
     }
   ]
 }

@@ -94,10 +94,13 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;");
 }
 
-function formatWritingDate(date) {
+function formatIndexDate(date) {
   if (!date) return "";
-  const parsed = new Date(date);
+  if (/^\d{4}$/.test(date)) return date;
+
+  const parsed = new Date(`${date}T12:00:00`);
   if (Number.isNaN(parsed.getTime())) return date;
+
   return parsed.toLocaleDateString("en-US", {
     year: "numeric",
     month: "short",
@@ -105,63 +108,46 @@ function formatWritingDate(date) {
   });
 }
 
-function renderBooks(data) {
-  const container = document.getElementById("books-content");
+function renderIndexList(container, items, { emptyLabel, link = false } = {}) {
   if (!container) return;
 
-  const sections = data?.sections || [];
-  if (!sections.length) {
-    container.innerHTML = '<p class="panel-empty">No books yet.</p>';
+  if (!items.length) {
+    container.innerHTML = `<p class="panel-empty">${emptyLabel}</p>`;
     return;
   }
 
-  container.innerHTML = sections
-    .map(
-      (section) => `
-        <div class="section">
-          <h2 class="section-title">${escapeHtml(section.year)}</h2>
-          ${section.books
-            .map(
-              (book) =>
-                `<p class="book-title">${escapeHtml(book.title)}</p>`
-            )
-            .join("")}
-        </div>`
-    )
-    .join("");
+  container.innerHTML = `<ul class="index-list">${items
+    .map((item) => {
+      const safeUrl =
+        link && item.url && /^https?:\/\//i.test(item.url) ? item.url : "";
+      const title = safeUrl
+        ? `<a class="index-row__title" href="${safeUrl.replaceAll('"', "%22")}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a>`
+        : `<span class="index-row__title">${escapeHtml(item.title)}</span>`;
+
+      return `<li class="index-row">${title}<span class="index-row__line" aria-hidden="true"></span><span class="index-row__meta">${escapeHtml(formatIndexDate(item.date))}</span></li>`;
+    })
+    .join("")}</ul>`;
+}
+
+function renderBooks(data) {
+  const legacyItems =
+    data?.sections?.flatMap((section) =>
+      section.books.map((book) => ({
+        title: book.title,
+        date: book.date || section.year,
+      }))
+    ) || [];
+
+  renderIndexList(document.getElementById("books-content"), data?.items || legacyItems, {
+    emptyLabel: "No books yet.",
+  });
 }
 
 function renderWritings(data) {
-  const container = document.getElementById("writings-content");
-  if (!container) return;
-
-  const items = data?.items || [];
-  if (!items.length) {
-    container.innerHTML = '<p class="panel-empty">No writings yet.</p>';
-    return;
-  }
-
-  container.innerHTML = `
-    <div class="section">
-      <h2 class="section-title">Writings</h2>
-      ${items
-        .map((item) => {
-          const safeUrl =
-            item.url && /^https?:\/\//i.test(item.url) ? item.url : "";
-          const label = safeUrl
-            ? `<a href="${safeUrl.replaceAll('"', "%22")}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a>`
-            : escapeHtml(item.title);
-
-          return `
-            <article class="entry">
-              <p class="entry-date">${escapeHtml(formatWritingDate(item.date))}</p>
-              <div class="entry-details">
-                <p class="entry-role writing-title">${label}</p>
-              </div>
-            </article>`;
-        })
-        .join("")}
-    </div>`;
+  renderIndexList(document.getElementById("writings-content"), data?.items || [], {
+    emptyLabel: "No writings yet.",
+    link: true,
+  });
 }
 
 async function loadNotionContent() {

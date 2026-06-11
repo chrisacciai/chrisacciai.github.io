@@ -172,7 +172,7 @@ a:hover {
 .hero-content {
   display: flex;
   flex-direction: column;
-  gap: var(--stack-gap);
+  gap: calc(var(--stack-gap) * 1.5);
 }
 
 .home-blurb {
@@ -186,8 +186,16 @@ a:hover {
 }
 
 .home-blurb--contact a {
+  color: var(--text-muted);
   text-decoration: underline;
   text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.home-blurb--contact a:hover,
+.home-blurb--contact a:focus-visible {
+  color: var(--text);
+  opacity: 1;
 }
 
 .panel-empty {
@@ -210,9 +218,7 @@ a:hover {
 }
 
 .panel#about,
-.panel#resume,
-.panel#books,
-.panel#writings {
+.panel#resume {
   display: grid;
   grid-template-columns: max-content 1fr;
   column-gap: 24px;
@@ -220,9 +226,7 @@ a:hover {
   max-width: var(--content-max-width);
 }
 
-.panel#books .section,
-.panel#resume .section,
-.panel#writings .section {
+.panel#resume .section {
   display: contents;
 }
 
@@ -230,15 +234,53 @@ a:hover {
   margin-top: var(--section-gap);
 }
 
-.panel#books .book-title {
-  grid-column: 1 / -1;
-  color: var(--text);
-  line-height: 1.4;
+.index-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--stack-gap) * 1.5);
 }
 
-.panel#writings .writing-title a {
-  text-decoration: underline;
-  text-underline-offset: 2px;
+.index-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.index-row:hover,
+.index-row:focus-within {
+  color: var(--text);
+}
+
+.index-row__title {
+  flex-shrink: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.index-row__title:hover {
+  opacity: 1;
+}
+
+.index-row__line {
+  flex: 1;
+  min-width: 24px;
+  border-bottom: 1px solid currentColor;
+  opacity: 0.35;
+  transition: opacity 0.2s ease;
+}
+
+.index-row:hover .index-row__line,
+.index-row:focus-within .index-row__line {
+  opacity: 1;
+}
+
+.index-row__meta {
+  flex-shrink: 0;
+  white-space: nowrap;
+  color: inherit;
 }
 
 .section-title {
@@ -401,9 +443,7 @@ a:hover {
   }
 
   .panel#about,
-  .panel#resume,
-  .panel#books,
-  .panel#writings {
+  .panel#resume {
     column-gap: 16px;
   }
 
