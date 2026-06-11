@@ -80,11 +80,16 @@ const PHOTOGRAPHY = [
 
 const DEFAULT_PANEL = "photography";
 const SITE_TITLE = "Christopher Acciai";
+const NOTES_HASH_PREFIX = "notes/";
 
 const navItems = document.querySelectorAll(".nav-item[data-panel]");
 const connectNav = document.querySelector('.nav-item[data-panel="connect"]');
 const panels = document.querySelectorAll(".panel");
 const page = document.querySelector(".page");
+const siteLayout = document.querySelector(".site-layout");
+const siteName = document.querySelector(".site-name");
+
+let notesData = null;
 
 function escapeHtml(value) {
   return String(value)
@@ -108,7 +113,7 @@ function formatIndexDate(date) {
   });
 }
 
-function renderIndexList(container, items, { emptyLabel, link = false } = {}) {
+function renderIndexList(container, items, { emptyLabel, link = false, noteLink = false } = {}) {
   if (!container) return;
 
   if (!items.length) {
@@ -120,9 +125,15 @@ function renderIndexList(container, items, { emptyLabel, link = false } = {}) {
     .map((item) => {
       const safeUrl =
         link && item.url && /^https?:\/\//i.test(item.url) ? item.url : "";
-      const title = safeUrl
-        ? `<a class="index-row__title" href="${safeUrl.replaceAll('"', "%22")}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a>`
-        : `<span class="index-row__title">${escapeHtml(item.title)}</span>`;
+      let title;
+
+      if (noteLink && item.slug) {
+        title = `<a class="index-row__title" href="#notes/${encodeURIComponent(item.slug)}">${escapeHtml(item.title)}</a>`;
+      } else if (safeUrl) {
+        title = `<a class="index-row__title" href="${safeUrl.replaceAll('"', "%22")}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a>`;
+      } else {
+        title = `<span class="index-row__title">${escapeHtml(item.title)}</span>`;
+      }
 
       return `<li class="index-row">${title}<span class="index-row__line" aria-hidden="true"></span><span class="index-row__meta">${escapeHtml(formatIndexDate(item.date))}</span></li>`;
     })
@@ -150,10 +161,77 @@ function renderWritings(data) {
   });
 }
 
+function getNoteSlugFromHash() {
+  const hash = location.hash.slice(1);
+  if (!hash.startsWith(NOTES_HASH_PREFIX)) return null;
+  return decodeURIComponent(hash.slice(NOTES_HASH_PREFIX.length));
+}
+
+function renderNotesList() {
+  renderIndexList(document.getElementById("notes-content"), notesData?.items || [], {
+    emptyLabel: "No notes yet.",
+    noteLink: true,
+  });
+}
+
+function showNotesList() {
+  if (location.hash.startsWith(`#${NOTES_HASH_PREFIX}`)) {
+    history.replaceState(null, "", `${location.pathname}${location.search}`);
+  }
+
+  renderNotesList();
+
+  const notesNav = document.querySelector('.nav-item[data-panel="notes"]');
+  if (notesNav?.classList.contains("is-active")) {
+    document.title = `${SITE_TITLE} / Notes`;
+  }
+}
+
+async function openNote(slug) {
+  const container = document.getElementById("notes-content");
+  if (!container) return;
+
+  try {
+    const response = await fetch(`data/notes/${encodeURIComponent(slug)}.json`);
+    if (!response.ok) throw new Error("Note not found");
+
+    const note = await response.json();
+    container.innerHTML = `
+      <article class="note-view">
+        <header class="note-view__header">
+          <button type="button" class="note-view__back">Notes</button>
+          <span class="note-view__sep" aria-hidden="true">/</span>
+          <span class="note-view__title">${escapeHtml(note.title)}</span>
+        </header>
+        <div class="note-body">${note.html || ""}</div>
+      </article>`;
+
+    container.querySelector(".note-view__back")?.addEventListener("click", showNotesList);
+
+    const notesNav = document.querySelector('.nav-item[data-panel="notes"]');
+    if (notesNav?.classList.contains("is-active")) {
+      document.title = `${SITE_TITLE} / ${note.title}`;
+    }
+  } catch {
+    showNotesList();
+  }
+}
+
+function renderNotes() {
+  const slug = getNoteSlugFromHash();
+  if (slug) {
+    openNote(slug);
+    return;
+  }
+
+  showNotesList();
+}
+
 async function loadNotionContent() {
-  const [booksResult, writingsResult] = await Promise.allSettled([
+  const [booksResult, writingsResult, notesResult] = await Promise.allSettled([
     fetch("data/books.json").then((response) => response.json()),
     fetch("data/writings.json").then((response) => response.json()),
+    fetch("data/notes.json").then((response) => response.json()),
   ]);
 
   if (booksResult.status === "fulfilled") {
@@ -162,6 +240,14 @@ async function loadNotionContent() {
 
   if (writingsResult.status === "fulfilled") {
     renderWritings(writingsResult.value);
+  }
+
+  if (notesResult.status === "fulfilled") {
+    notesData = notesResult.value;
+    const notesPanel = document.getElementById("notes");
+    if (notesPanel && !notesPanel.hidden) {
+      renderNotes();
+    }
   }
 }
 
@@ -238,6 +324,7 @@ function activateNav(button) {
   page.scrollTop = 0;
 
   if (target === "connect") {
+    siteLayout?.classList.add("is-connect");
     page.classList.remove("has-section");
     panels.forEach((panel) => {
       panel.hidden = true;
@@ -247,6 +334,8 @@ function activateNav(button) {
     return;
   }
 
+  siteLayout?.classList.remove("is-connect");
+
   page.classList.add("has-section");
   panels.forEach((panel) => {
     const isActive = panel.dataset.panel === target;
@@ -254,6 +343,10 @@ function activateNav(button) {
     panel.hidden = !isActive;
   });
   document.title = `${SITE_TITLE} / ${label}`;
+
+  if (target === "notes") {
+    renderNotes();
+  }
 }
 
 navItems.forEach((button) => {
@@ -266,6 +359,35 @@ navItems.forEach((button) => {
   });
 });
 
+siteName?.addEventListener("click", () => {
+  activateNav(connectNav);
+});
+
+window.addEventListener("hashchange", () => {
+  const slug = getNoteSlugFromHash();
+  if (!slug) {
+    const notesPanel = document.getElementById("notes");
+    if (notesPanel && !notesPanel.hidden) {
+      showNotesList();
+    }
+    return;
+  }
+
+  const notesNav = document.querySelector('.nav-item[data-panel="notes"]');
+  if (notesNav && !notesNav.classList.contains("is-active")) {
+    activateNav(notesNav);
+    return;
+  }
+
+  openNote(slug);
+});
+
 renderPhotoGallery();
 loadNotionContent();
-activateNav(document.querySelector(`.nav-item[data-panel="${DEFAULT_PANEL}"]`));
+
+const initialNoteSlug = getNoteSlugFromHash();
+if (initialNoteSlug) {
+  activateNav(document.querySelector('.nav-item[data-panel="notes"]'));
+} else {
+  activateNav(document.querySelector(`.nav-item[data-panel="${DEFAULT_PANEL}"]`));
+}

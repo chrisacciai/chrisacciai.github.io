@@ -11,28 +11,38 @@ on:
       - scripts/sync-notion.mjs
       - .github/workflows/sync-notion.yml
 
-permissions:
-  contents: write
-
 jobs:
   sync:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Sync Books and Writings from Notion
+      - name: Sync Books, Writings, and Notes from Notion
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-        run: node scripts/sync-notion.mjs
+        run: |
+          if [ -z "$NOTION_TOKEN" ]; then
+            echo "::error::NOTION_TOKEN is not set. Add a repository secret named NOTION_TOKEN at Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+          node scripts/sync-notion.mjs
 
-      - name: Commit updated data files
+      - name: Commit and push updated data files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/books.json data/writings.json
-          git diff --staged --quiet || git commit -m "Sync Books and Writings from Notion"
+          git add data/books.json data/writings.json data/notes.json data/notes/
+          if git diff --staged --quiet; then
+            echo "No changes to commit — data already up to date."
+            exit 0
+          fi
+          git commit -m "Sync Books, Writings, and Notes from Notion"
           git push

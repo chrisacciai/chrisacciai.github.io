@@ -12,7 +12,18 @@
   </head>
   <body>
     <div class="site-layout">
-      <p class="site-name">Christopher Acciai</p>
+      <header class="site-brand">
+        <button type="button" class="site-name">Christopher Acciai</button>
+        <div class="site-connect">
+          <p class="home-blurb">Account Executive, Notion</p>
+          <p class="home-blurb">San Francisco, CA, US</p>
+          <p class="home-blurb home-blurb--contact">
+            <a href="mailto:chris@acciai.us">Email</a>
+            <a href="https://www.linkedin.com/in/christopheracciai/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/chrisacciai" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </p>
+        </div>
+      </header>
 
       <aside class="site-nav" aria-label="Site sections">
         <nav class="site-nav-list">
@@ -29,18 +40,6 @@
       </aside>
 
       <main class="page">
-        <section class="hero">
-          <div class="hero-content">
-            <p class="home-blurb">Account Executive, Notion</p>
-            <p class="home-blurb">San Francisco, CA, US</p>
-            <p class="home-blurb home-blurb--contact">
-              <a href="mailto:chris@acciai.us">Email</a>
-              <a href="https://www.linkedin.com/in/christopheracciai/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a href="https://github.com/chrisacciai" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </p>
-          </div>
-        </section>
-
         <div class="panels">
           <section class="panel" id="about" data-panel="about" hidden>
             <div class="about-intro">
@@ -145,7 +144,7 @@
           </section>
 
           <section class="panel" id="notes" data-panel="notes" hidden>
-            <p class="panel-empty">Coming soon.</p>
+            <div id="notes-content"></div>
           </section>
         </div>
       </main>
