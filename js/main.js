@@ -1,4 +1,5 @@
 const PHOTOGRAPHY_DIR = "images/photography/";
+const ILLUSTRATIONS_DIR = "images/illustrations/";
 
 const PHOTOGRAPHY = [
   "000061160024_websize.jpg",
@@ -77,6 +78,8 @@ const PHOTOGRAPHY = [
   "3134_36.jpg",
   "3134_37.jpg",
 ];
+
+const ILLUSTRATIONS = ["img_6347.jpg"];
 
 const DEFAULT_PANEL = "photography";
 const SITE_TITLE = "Christopher Acciai";
@@ -251,57 +254,64 @@ async function loadNotionContent() {
   }
 }
 
-function photoSrc(file, full) {
+function gallerySrc(dir, file, full) {
   const size = full ? "full" : "half";
-  return `${PHOTOGRAPHY_DIR}${size}/${file}`;
+  return `${dir}${size}/${file}`;
+}
+
+function renderGallery(galleryId, items, dir, alt) {
+  const gallery = document.getElementById(galleryId);
+  if (!gallery) return;
+
+  gallery.innerHTML = items
+    .map((entry, index) => {
+      const file = typeof entry === "string" ? entry : entry.file;
+      const full = typeof entry === "string" ? false : entry.full;
+      const className = full
+        ? "photo-gallery__item photo-gallery__item--full"
+        : "photo-gallery__item";
+      const eager = index < 4 ? ' fetchpriority="high"' : "";
+
+      return `<figure class="${className}"><img data-src="${gallerySrc(dir, file, full)}" alt="${alt}" decoding="async"${eager}></figure>`;
+    })
+    .join("");
 }
 
 function renderPhotoGallery() {
-  const gallery = document.getElementById("photo-gallery");
-  if (!gallery) return;
-
-  gallery.innerHTML = PHOTOGRAPHY.map((entry, index) => {
-    const file = typeof entry === "string" ? entry : entry.file;
-    const full = typeof entry === "string" ? false : entry.full;
-    const className = full
-      ? "photo-gallery__item photo-gallery__item--full"
-      : "photo-gallery__item";
-    const eager = index < 4 ? ' fetchpriority="high"' : "";
-
-    return `<figure class="${className}"><img data-src="${photoSrc(file, full)}" alt="Film photograph" decoding="async"${eager}></figure>`;
-  }).join("");
-
-  lazyLoadGalleryImages(gallery);
+  renderGallery("photo-gallery", PHOTOGRAPHY, PHOTOGRAPHY_DIR, "Film photograph");
 }
 
-function lazyLoadGalleryImages(gallery) {
-  const images = gallery.querySelectorAll("img[data-src]");
+function renderIllustrationGallery() {
+  renderGallery("illustration-gallery", ILLUSTRATIONS, ILLUSTRATIONS_DIR, "Illustration");
+}
 
-  if (!("IntersectionObserver" in window)) {
-    images.forEach((img) => {
-      img.src = img.dataset.src;
-      img.removeAttribute("data-src");
-      img.addEventListener("load", () => img.classList.add("is-loaded"), { once: true });
-    });
-    return;
-  }
+function loadGalleryImage(img) {
+  const src = img.getAttribute("data-src");
+  if (!src) return;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        const img = entry.target;
-        img.src = img.dataset.src;
-        img.removeAttribute("data-src");
-        img.addEventListener("load", () => img.classList.add("is-loaded"), { once: true });
-        observer.unobserve(img);
-      });
+  img.addEventListener(
+    "load",
+    () => {
+      img.classList.add("is-loaded");
     },
-    { root: page, rootMargin: "400px 0px" }
+    { once: true }
   );
 
-  images.forEach((img) => observer.observe(img));
+  img.addEventListener(
+    "error",
+    () => {
+      img.classList.remove("is-loaded");
+    },
+    { once: true }
+  );
+
+  img.src = src;
+  img.removeAttribute("data-src");
+}
+
+function loadGalleryImages(gallery) {
+  if (!gallery) return;
+  gallery.querySelectorAll("img[data-src]").forEach(loadGalleryImage);
 }
 
 function setActiveSection(activeButton) {
@@ -347,6 +357,9 @@ function activateNav(button) {
   if (target === "notes") {
     renderNotes();
   }
+
+  const activePanel = document.getElementById(target);
+  activePanel?.querySelectorAll(".photo-gallery").forEach(loadGalleryImages);
 }
 
 navItems.forEach((button) => {
@@ -383,6 +396,7 @@ window.addEventListener("hashchange", () => {
 });
 
 renderPhotoGallery();
+renderIllustrationGallery();
 loadNotionContent();
 
 const initialNoteSlug = getNoteSlugFromHash();
