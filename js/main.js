@@ -91,8 +91,18 @@ const panels = document.querySelectorAll(".panel");
 const page = document.querySelector(".page");
 const siteLayout = document.querySelector(".site-layout");
 const siteName = document.querySelector(".site-name");
+const siteConnect = document.querySelector(".site-connect");
 
 let notesData = null;
+let navRequestId = 0;
+
+function prefersReducedMotion() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function isConnectVisible() {
+  return siteLayout?.classList.contains("is-connect");
+}
 
 function escapeHtml(value) {
   return String(value)
@@ -314,6 +324,65 @@ function loadGalleryImages(gallery) {
   gallery.querySelectorAll("img[data-src]").forEach(loadGalleryImage);
 }
 
+function showConnect() {
+  navRequestId += 1;
+  siteLayout?.classList.add("is-connect");
+
+  if (!siteConnect) return;
+
+  siteConnect.classList.remove("is-exiting");
+  siteConnect.classList.remove("is-entering");
+  void siteConnect.offsetWidth;
+  siteConnect.classList.add("is-entering");
+}
+
+function hideConnect(requestId) {
+  if (!siteConnect || !isConnectVisible()) {
+    siteLayout?.classList.remove("is-connect");
+    siteConnect?.classList.remove("is-entering", "is-exiting");
+    return;
+  }
+
+  siteConnect.classList.remove("is-entering");
+
+  if (prefersReducedMotion()) {
+    siteLayout?.classList.remove("is-connect");
+    siteConnect.classList.remove("is-exiting");
+    return;
+  }
+
+  const finish = () => {
+    siteConnect.removeEventListener("animationend", finish);
+    siteConnect.classList.remove("is-exiting");
+
+    if (requestId !== navRequestId) {
+      return;
+    }
+
+    siteLayout?.classList.remove("is-connect");
+  };
+
+  siteConnect.classList.add("is-exiting");
+  siteConnect.addEventListener("animationend", finish, { once: true });
+}
+
+function showPanel(target, label) {
+  page.classList.add("has-section");
+  panels.forEach((panel) => {
+    const isActive = panel.dataset.panel === target;
+    panel.classList.toggle("is-active", isActive);
+    panel.hidden = !isActive;
+  });
+  document.title = `${SITE_TITLE} / ${label}`;
+
+  if (target === "notes") {
+    renderNotes();
+  }
+
+  const activePanel = document.getElementById(target);
+  activePanel?.querySelectorAll(".photo-gallery").forEach(loadGalleryImages);
+}
+
 function setActiveSection(activeButton) {
   navItems.forEach((button) => {
     const isActive = button === activeButton;
@@ -329,12 +398,13 @@ function setActiveSection(activeButton) {
 function activateNav(button) {
   const target = button.dataset.panel;
   const label = button.textContent.trim();
+  const requestId = ++navRequestId;
 
   setActiveSection(button);
   page.scrollTop = 0;
 
   if (target === "connect") {
-    siteLayout?.classList.add("is-connect");
+    showConnect();
     page.classList.remove("has-section");
     panels.forEach((panel) => {
       panel.hidden = true;
@@ -344,22 +414,14 @@ function activateNav(button) {
     return;
   }
 
-  siteLayout?.classList.remove("is-connect");
-
-  page.classList.add("has-section");
-  panels.forEach((panel) => {
-    const isActive = panel.dataset.panel === target;
-    panel.classList.toggle("is-active", isActive);
-    panel.hidden = !isActive;
-  });
-  document.title = `${SITE_TITLE} / ${label}`;
-
-  if (target === "notes") {
-    renderNotes();
+  if (isConnectVisible()) {
+    hideConnect(requestId);
+  } else {
+    siteLayout?.classList.remove("is-connect");
+    siteConnect?.classList.remove("is-entering", "is-exiting");
   }
 
-  const activePanel = document.getElementById(target);
-  activePanel?.querySelectorAll(".photo-gallery").forEach(loadGalleryImages);
+  showPanel(target, label);
 }
 
 navItems.forEach((button) => {
