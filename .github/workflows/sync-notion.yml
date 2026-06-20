@@ -36,6 +36,8 @@ jobs:
           node scripts/sync-notion.mjs
 
       - name: Commit and push updated data files
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -45,4 +47,9 @@ jobs:
             exit 0
           fi
           git commit -m "Sync Books, Writings, and Notes from Notion"
-          git push
+          if [ -z "$GH_PAT" ]; then
+            echo "::warning::GH_PAT is not set. Pushes from GITHUB_TOKEN update main but do not trigger GitHub Pages rebuilds. Add a classic PAT with repo scope as the GH_PAT repository secret."
+            git push
+          else
+            git push "https://x-access-token:${GH_PAT}@github.com/${GITHUB_REPOSITORY}.git" HEAD:main
+          fi
